@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Crust Kitchen</title>
+    <title>Custom Crust Kitchen | Boston, MA</title>
     <style>
         /* Import Luxury Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 
         /* Dark Theme Variables */
         :root {
-            --bg-color: #121212; /* Adjusted to a deep charcoal to match the logo background */
+            --bg-color: #121212; 
+            --bg-secondary: #1a1a1a; /* Slightly lighter charcoal for section contrast */
             --text-main: #f5f5f5; 
-            --accent-color: #c5a059; /* Adjusted to match the specific metallic gold in your logo */
+            --text-muted: #b0b0b0;
+            --accent-color: #c5a059; 
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Montserrat', sans-serif;
         }
@@ -21,6 +23,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth; /* Enables smooth scrolling between sections */
         }
 
         body {
@@ -28,92 +31,304 @@
             color: var(--text-main);
             font-family: var(--font-body);
             line-height: 1.6;
-            text-align: center;
         }
 
-        /* Navigation / Header */
-        header {
-            padding: 40px 20px 0;
+        /* Fixed Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(18, 18, 18, 0.95);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
 
-        .logo-img {
-            max-width: 300px; /* Adjust this value to make the logo bigger or smaller */
-            height: auto;
-            display: block;
+        .nav-logo {
+            height: 50px; /* Smaller logo for the top bar */
+            width: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Universal Section Styling */
+        section {
+            padding: 120px 20px 80px; /* Top padding prevents the fixed nav from hiding content */
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 60px 20px 100px;
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        /* Hero Section (Home) */
+        #home {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 50vh;
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 150px; /* Extra space for the logo */
         }
 
-        .hero h1 {
+        .main-logo {
+            max-width: 350px;
+            margin-bottom: 40px;
+        }
+
+        #home h1 {
             font-family: var(--font-heading);
             font-size: 3.5rem;
             font-weight: 400;
             margin-bottom: 20px;
-            color: var(--text-main);
         }
 
-        .hero p {
+        #home p {
             font-weight: 300;
             font-size: 1.2rem;
             max-width: 600px;
             margin-bottom: 40px;
-            color: #b0b0b0;
+            color: var(--text-muted);
         }
 
-        /* The Clover CTA Button */
+        /* The Updated Placeholder CTA Button */
         .cta-button {
             background-color: transparent;
             color: var(--accent-color);
             border: 1px solid var(--accent-color);
             padding: 15px 40px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-family: var(--font-body);
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            cursor: default; /* Changes cursor so it doesn't look clickable yet */
+            opacity: 0.8;
         }
 
-        .cta-button:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
+        /* About Section */
+        #about {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 80px 40px;
+            margin-bottom: 60px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .bio-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(245, 245, 245, 0.1);
+        }
+
+        .bio-name {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .bio-title {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        /* Placeholder Images */
+        .image-placeholder {
+            background-color: #2a2a2a;
+            width: 100%;
+            height: 400px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-family: var(--font-heading);
+            font-style: italic;
+            border: 1px dashed #444;
+        }
+
+        .bio-image-placeholder {
+            height: 500px; /* Slightly taller for a portrait photo */
+        }
+
+        /* Menu Section */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .menu-item {
+            background-color: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-image-placeholder {
+            background-color: #2a2a2a;
+            width: 100%;
+            height: 250px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-style: italic;
+        }
+
+        .menu-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .menu-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 300;
         }
 
         /* Footer */
         footer {
+            text-align: center;
             padding: 40px 20px;
             font-size: 0.9rem;
             color: #666;
             border-top: 1px solid #222;
+            margin-top: 40px;
+        }
+
+        /* Responsive adjustments for mobile phones */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none; /* Can add a hamburger menu later if needed */
+            }
+            #home h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="CCK_Logo.png" alt="Custom Crust Kitchen Logo" class="logo-img">
-    </header>
+    <nav>
+        <img src="CCK_Logo.png" alt="Custom Crust Kitchen" class="nav-logo">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#menu">Menu</a></li>
+        </ul>
+    </nav>
 
-    <section class="hero">
+    <section id="home">
+        <img src="CCK_Logo.png" alt="Custom Crust Kitchen Logo" class="main-logo">
         <h1>Crafted to Perfection.</h1>
         <p>Experience the art of the perfect pie. Fresh ingredients, masterful technique, and a crust like no other.</p>
         
-        <a href="#" class="cta-button">Order Now</a>
+        <div class="cta-button">Online Ordering Coming Soon</div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">Our Story</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Welcome to Custom Crust Kitchen. This space is reserved to tell the story of how our kitchen came to life. We believe in the power of incredible food to bring people together, using only the finest ingredients to craft a truly unforgettable pizza experience.</p>
+                <p>From the first batch of dough to the final product coming out of the oven, every detail is engineered for perfection.</p>
+                
+                <div class="bio-section">
+                    <h3 class="bio-name">Christian De Brun</h3>
+                    <h4 class="bio-title">Founder & Director of Operations</h4>
+                    <p><i>[Biography placeholder: Here is where we will write the detailed story of your culinary background, your inspiration for starting the business, and your vision for the perfect crust.]</i></p>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="image-placeholder bio-image-placeholder">
+                    [ Placeholder: Photo of Christian / Kitchen ]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2 class="section-title">The Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="menu-image-placeholder">[ Placeholder: Pizza Photo ]</div>
+                <h3>The Classic</h3>
+                <p>House-made San Marzano tomato sauce, fresh mozzarella, basil, and a drizzle of extra virgin olive oil.</p>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-image-placeholder">[ Placeholder: Pizza Photo ]</div>
+                <h3>Meat Lovers</h3>
+                <p>Premium pepperoni, sweet Italian sausage, house-made meatballs, and thick-cut bacon.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-image-placeholder">[ Placeholder: Pizza Photo ]</div>
+                <h3>Custom Creation</h3>
+                <p>Your canvas, our crust. Choose from our selection of premium meats, fresh vegetables, and artisan cheeses.</p>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>Boston, MA | Open Daily</p>
+        <p>Opening soon in a location near you.</p>
         <p>&copy; 2026 Custom Crust Kitchen LLC. All Rights Reserved.</p>
     </footer>
 
