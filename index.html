@@ -212,11 +212,12 @@
             object-fit: cover;
         }
 
-        /* Menu Section */
+        /* Menu Section - Featured Grid */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
+            margin-bottom: 60px;
         }
 
         .menu-item {
@@ -262,6 +263,47 @@
             font-size: 0.9rem;
             color: var(--text-muted);
             font-weight: 300;
+        }
+
+        /* Menu Section - Text List */
+        .text-menu-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .menu-category {
+            margin-bottom: 50px;
+        }
+
+        .menu-category-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--accent-color);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .text-menu-item {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-top: 5px;
         }
 
         /* Contact Section */
@@ -404,17 +446,18 @@
 
     <section id="menu">
         <h2 class="section-title">The Menu</h2>
+        
         <div class="menu-grid">
             <div class="menu-item">
                 <div class="menu-image-placeholder">[ Placeholder: Pizza Photo ]</div>
-                <h3>The Classic</h3>
-                <p>House-made San Marzano tomato sauce, fresh mozzarella, basil, and a drizzle of extra virgin olive oil.</p>
+                <h3>Traditional Cheese</h3>
+                <p>Our signature tomato sauce topped with a perfect blend of premium whole-milk mozzarella.</p>
             </div>
             
             <div class="menu-item">
                 <div class="menu-image-placeholder">[ Placeholder: Pizza Photo ]</div>
                 <h3>Meat Lovers</h3>
-                <p>Premium pepperoni, sweet Italian sausage, house-made meatballs, and thick-cut bacon.</p>
+                <p>Premium pepperoni, sweet Italian sausage, seasoned ground beef, and thick-cut bacon.</p>
             </div>
 
             <div class="menu-item">
@@ -422,6 +465,57 @@
                 <h3>Custom Creation</h3>
                 <p>Your canvas, our crust. Choose from our selection of premium meats, fresh vegetables, and artisan cheeses.</p>
             </div>
+        </div>
+
+        <div class="text-menu-container">
+            
+            <div class="menu-category">
+                <h3 class="menu-category-title">Specialty Pizzas</h3>
+                
+                <div class="text-menu-item">
+                    <h4 class="item-name">Margherita</h4>
+                    <p class="item-desc">Fresh mozzarella, vine-ripened tomatoes, fresh basil, and a drizzle of extra virgin olive oil.</p>
+                </div>
+                
+                <div class="text-menu-item">
+                    <h4 class="item-name">Buffalo Chicken</h4>
+                    <p class="item-desc">Premium chicken tossed in spicy buffalo sauce, premium mozzarella, and a ranch or blue cheese drizzle.</p>
+                </div>
+
+                <div class="text-menu-item">
+                    <h4 class="item-name">Gluten-Free Cauliflower Crust (9-inch)</h4>
+                    <p class="item-desc">A delicious, crispy cauliflower crust available with your choice of custom toppings.</p>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="menu-category-title">Calzones</h3>
+                
+                <div class="text-menu-item">
+                    <h4 class="item-name">Create Your Own Calzone</h4>
+                    <p class="item-desc">Available in Medium and Large. Folded and baked to perfection, filled with our signature cheese blend and your choice of custom ingredients.</p>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="menu-category-title">Kids Menu</h3>
+                
+                <div class="text-menu-item">
+                    <h4 class="item-name">Kids Cheese Pizza</h4>
+                    <p class="item-desc">Our classic cheese pizza on a crispy, kid-friendly thin crust.</p>
+                </div>
+
+                <div class="text-menu-item">
+                    <h4 class="item-name">Kids Pepperoni Pizza</h4>
+                    <p class="item-desc">Topped with premium pepperoni on a crispy thin crust.</p>
+                </div>
+
+                <div class="text-menu-item">
+                    <h4 class="item-name">Kids Make Your Own</h4>
+                    <p class="item-desc">Thin crust only. Let the little ones get creative with their favorite toppings!</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -436,7 +530,7 @@
 
             <div class="social-container">
                 <a href="https://www.instagram.com/customcrustkitchen/" target="_blank" class="social-btn">Follow on Instagram</a>
-                </div>
+            </div>
         </div>
     </section>
 
