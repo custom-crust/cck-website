@@ -156,7 +156,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .about-text p {
@@ -186,6 +186,11 @@
             margin-bottom: 15px;
         }
 
+        .bio-section p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
         /* Cleaned Up Image Containers */
         .image-placeholder {
             background-color: #2a2a2a;
@@ -198,6 +203,8 @@
 
         .bio-image-placeholder {
             height: 600px; 
+            position: sticky;
+            top: 120px;
         }
 
         .image-placeholder img {
@@ -385,6 +392,10 @@
             .about-grid {
                 grid-template-columns: 1fr;
             }
+            .bio-image-placeholder {
+                position: static;
+                height: 400px;
+            }
             .nav-links {
                 display: none; 
             }
@@ -408,7 +419,7 @@
         </a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
+            <li><a href="#about">Our Story</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
@@ -426,24 +437,26 @@
         <h2 class="section-title">Our Story</h2>
         <div class="about-grid">
             <div class="about-text">
-                <p>Welcome to Custom Crust Kitchen. This space is reserved to tell the story of how our kitchen came to life. We believe in the power of incredible food to bring people together, using only the finest ingredients to craft a truly unforgettable pizza experience.</p>
-                <p>From the first batch of dough to the final product coming out of the oven, every detail is engineered for perfection.</p>
+                <p>Welcome to Custom Crust Kitchen. We believe in the power of incredible food to bring people together, using only the finest ingredients to craft a truly unforgettable pizza experience. From the first batch of dough to the final product coming out of the oven, every detail is engineered for perfection.</p>
+                <p>With our combined decades of hospitality and culinary experience, we are equipped to cater to your every need—whether it’s an intimate backyard party, a large-scale event, or a vibrant food festival. With an unwavering commitment to fresh, high-end products, we promise to stay true to the authentic art of Italian cuisine, straight from our family to yours.</p>
                 
                 <div class="bio-section">
                     <h3 class="bio-name">Christian De Brun</h3>
                     <h4 class="bio-title">Founder & Director of Operations</h4>
-                    <p><i>[Biography placeholder: Here is where we will write the detailed story of your culinary background, your inspiration for starting the business, and your vision for the perfect crust.]</i></p>
+                    <p>Christian’s culinary journey began long before he stepped into a professional kitchen. Immigrating to the United States from Uruguay in 2001 at the age of 14, he learned the foundational love of cooking from his mother, who also built her life working in kitchens across the country. Starting from the ground up while still in high school, Christian carried a simple philosophy: whether washing dishes or catering a luxury event, always be the absolute best and make every guest feel at home.</p>
+                    <p>Over the years, he climbed the ranks to General Manager, overseeing operations everywhere from high-volume venues to premium, high-end restaurants. In 2008, his trajectory changed when he immersed himself in authentic Italian cuisine at a legendary, landmark pizzeria in Springfield, Massachusetts. It was there that he truly honed his craft and developed a lifelong obsession with the art of the perfect dough. Today, Custom Crust Kitchen is the culmination of his deep-rooted passion for hospitality and his enduring culinary love.</p>
                 </div>
 
                 <div class="bio-section">
                     <h3 class="bio-name">Angela Germano</h3>
                     <h4 class="bio-title">Founder & CEO</h4>
-                    <p><i>[Biography placeholder: Here is where we will highlight Angela's vision, leadership, and the foundational role she plays in bringing Custom Crust Kitchen to life.]</i></p>
+                    <p>The entrepreneurial backbone of Custom Crust Kitchen, Angela brings a rich international culinary background and a relentless work ethic to the brand. Originally from Brazil, her journey has spanned continents, exploring the vibrant culinary traditions of both Brazil and Portugal, where she gained invaluable experience working in demanding restaurant environments.</p>
+                    <p>Today, she is a highly respected and well-known business owner in the local community. As Christian's mother-in-law, Angela is the matriarch of this venture, ensuring that Custom Crust Kitchen remains true to its core identity: a genuine family business. Her visionary leadership, deep entrepreneurial experience, and uncompromising standard for quality are what elevate our kitchen from a simple pizzeria to a premium catering experience.</p>
                 </div>
             </div>
             <div class="about-image">
                 <div class="image-placeholder bio-image-placeholder">
-                    <img src="founders-photo.jpg" alt="Christian De Brun and Angela Germano" onerror="this.style.display='none'">
+                    <img src="founders-photo.jpg" alt="Christian De Brun and Angela Germano">
                 </div>
             </div>
         </div>
