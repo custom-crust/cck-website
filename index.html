@@ -11,7 +11,7 @@
         /* Dark Theme Variables */
         :root {
             --bg-color: #121212; 
-            --bg-secondary: #1a1a1a; /* Slightly lighter charcoal for section contrast */
+            --bg-secondary: #1a1a1a; 
             --text-main: #f5f5f5; 
             --text-muted: #b0b0b0;
             --accent-color: #c5a059; 
@@ -23,7 +23,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth; /* Enables smooth scrolling between sections */
+            scroll-behavior: smooth; 
         }
 
         body {
@@ -47,9 +47,19 @@
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
 
+        .nav-logo-link {
+            display: flex;
+            align-items: center;
+        }
+
         .nav-logo {
-            height: 50px; /* Smaller logo for the top bar */
+            height: 50px; 
             width: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            opacity: 0.8;
         }
 
         .nav-links {
@@ -73,7 +83,7 @@
 
         /* Universal Section Styling */
         section {
-            padding: 120px 20px 80px; /* Top padding prevents the fixed nav from hiding content */
+            padding: 120px 20px 80px; 
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -95,7 +105,7 @@
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            padding-top: 150px; /* Extra space for the logo */
+            padding-top: 150px; 
         }
 
         .main-logo {
@@ -130,7 +140,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             text-decoration: none;
-            cursor: default; /* Changes cursor so it doesn't look clickable yet */
+            cursor: default; 
             opacity: 0.8;
         }
 
@@ -156,7 +166,7 @@
         }
 
         .bio-section {
-            margin-top: 40px;
+            margin-top: 30px;
             padding-top: 30px;
             border-top: 1px solid rgba(245, 245, 245, 0.1);
         }
@@ -176,7 +186,7 @@
             margin-bottom: 15px;
         }
 
-        /* Placeholder Images */
+        /* Images and Placeholders */
         .image-placeholder {
             background-color: #2a2a2a;
             width: 100%;
@@ -189,10 +199,17 @@
             font-family: var(--font-heading);
             font-style: italic;
             border: 1px dashed #444;
+            overflow: hidden; 
         }
 
         .bio-image-placeholder {
-            height: 500px; /* Slightly taller for a portrait photo */
+            height: 600px; 
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Menu Section */
@@ -225,6 +242,13 @@
             justify-content: center;
             color: #555;
             font-style: italic;
+            overflow: hidden;
+        }
+
+        .menu-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .menu-item h3 {
@@ -240,6 +264,69 @@
             font-weight: 300;
         }
 
+        /* Contact Section */
+        #contact {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 80px 40px;
+            text-align: center;
+            margin-bottom: 60px;
+            margin-top: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-email {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .contact-email:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-muted {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .social-container {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 12px 30px;
+            font-size: 0.85rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -247,7 +334,6 @@
             font-size: 0.9rem;
             color: #666;
             border-top: 1px solid #222;
-            margin-top: 40px;
         }
 
         /* Responsive adjustments for mobile phones */
@@ -256,10 +342,13 @@
                 grid-template-columns: 1fr;
             }
             .nav-links {
-                display: none; /* Can add a hamburger menu later if needed */
+                display: none; 
             }
             #home h1 {
                 font-size: 2.5rem;
+            }
+            .contact-email {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -267,11 +356,14 @@
 <body>
 
     <nav>
-        <img src="CCK_Logo.png" alt="Custom Crust Kitchen" class="nav-logo">
+        <a href="#home" class="nav-logo-link">
+            <img src="CCK_Logo.png" alt="Custom Crust Kitchen" class="nav-logo">
+        </a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
 
@@ -295,10 +387,16 @@
                     <h4 class="bio-title">Founder & Director of Operations</h4>
                     <p><i>[Biography placeholder: Here is where we will write the detailed story of your culinary background, your inspiration for starting the business, and your vision for the perfect crust.]</i></p>
                 </div>
+
+                <div class="bio-section">
+                    <h3 class="bio-name">Angela Germano</h3>
+                    <h4 class="bio-title">Founder & CEO</h4>
+                    <p><i>[Biography placeholder: Here is where we will highlight Angela's vision, leadership, and the foundational role she plays in bringing Custom Crust Kitchen to life.]</i></p>
+                </div>
             </div>
             <div class="about-image">
                 <div class="image-placeholder bio-image-placeholder">
-                    [ Placeholder: Photo of Christian / Kitchen ]
+                    [ Placeholder: Photo of Christian & Angela / Kitchen ]
                 </div>
             </div>
         </div>
@@ -324,6 +422,20 @@
                 <h3>Custom Creation</h3>
                 <p>Your canvas, our crust. Choose from our selection of premium meats, fresh vegetables, and artisan cheeses.</p>
             </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-info">
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Have a question or want to reach out ahead of our launch? We'd love to hear from you.</p>
+            
+            <a href="mailto:customcrustkitchen@outlook.com" class="contact-email">customcrustkitchen@outlook.com</a>
+            <p class="contact-muted">Phone number coming soon.</p>
+
+            <div class="social-container">
+                <a href="#" class="social-btn">Follow on Instagram</a>
+                </div>
         </div>
     </section>
 
