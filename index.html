@@ -128,7 +128,7 @@
             color: var(--text-muted);
         }
 
-        /* The Updated Placeholder CTA Button */
+        /* CTA Button Placeholder */
         .cta-button {
             background-color: transparent;
             color: var(--accent-color);
@@ -186,7 +186,7 @@
             margin-bottom: 15px;
         }
 
-        /* Images and Placeholders */
+        /* Images and Placeholders with Error Checking */
         .image-placeholder {
             background-color: #2a2a2a;
             width: 100%;
@@ -200,16 +200,19 @@
             font-style: italic;
             border: 1px dashed #444;
             overflow: hidden; 
+            position: relative;
         }
 
         .bio-image-placeholder {
             height: 600px; 
         }
 
+        /* Object-Fit Covering ensures future photos look sharp and perfect */
         .image-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         /* Menu Section - Featured Grid */
@@ -244,6 +247,7 @@
             color: #555;
             font-style: italic;
             overflow: hidden;
+            position: relative;
         }
 
         .menu-image-placeholder img {
@@ -466,6 +470,7 @@
             <div class="menu-item">
                 <div class="menu-image-placeholder">
                     <img src="traditional-cheese.jpg" alt="Traditional Cheese Pizza" onerror="this.style.display='none'">
+                    <span>[ Placeholder: Pizza Photo ]</span>
                 </div>
                 <h3>Traditional Cheese</h3>
                 <p>Our signature tomato sauce topped with a perfect blend of premium whole-milk mozzarella.</p>
@@ -474,6 +479,7 @@
             <div class="menu-item">
                 <div class="menu-image-placeholder">
                     <img src="meat-lovers.jpg" alt="Meat Lovers Pizza" onerror="this.style.display='none'">
+                    <span>[ Placeholder: Pizza Photo ]</span>
                 </div>
                 <h3>Meat Lovers</h3>
                 <p>Premium pepperoni, sweet Italian sausage, seasoned ground beef, and thick-cut bacon.</p>
@@ -482,6 +488,7 @@
             <div class="menu-item">
                 <div class="menu-image-placeholder">
                     <img src="custom-creation.jpg" alt="Custom Creation Pizza" onerror="this.style.display='none'">
+                    <span>[ Placeholder: Pizza Photo ]</span>
                 </div>
                 <h3>Custom Creation</h3>
                 <p>Your canvas, our crust. Choose from our selection of premium meats, fresh vegetables, and artisan cheeses.</p>
@@ -551,7 +558,8 @@
 
             <div class="social-container">
                 <a href="https://www.instagram.com/customcrustkitchen/" target="_blank" class="social-btn">Follow on Instagram</a>
-                <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review" target="_blank" class="social-btn">Leave a Google Review</a>
+                
+                <a href="https://g.page/r/CbGSCMsYjS0XEAI/review" target="_blank" class="social-btn">Leave a Google Review</a>
             </div>
         </div>
     </section>
