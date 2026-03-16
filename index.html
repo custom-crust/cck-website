@@ -217,7 +217,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
 
         .menu-item {
@@ -265,45 +265,56 @@
             font-weight: 300;
         }
 
-        /* Menu Section - Text List */
+        /* Menu Section - Text List (Centered Box Design) */
         .text-menu-container {
             max-width: 900px;
             margin: 0 auto;
-            text-align: left;
-            padding: 0 20px;
+            text-align: center; /* Centers all text */
+            padding: 60px 40px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--accent-color); /* Creates the luxury themed border */
+            border-radius: 8px;
         }
 
         .menu-category {
-            margin-bottom: 50px;
+            margin-bottom: 60px;
+        }
+
+        .menu-category:last-child {
+            margin-bottom: 0;
         }
 
         .menu-category-title {
             font-family: var(--font-heading);
             font-size: 2rem;
             color: var(--accent-color);
+            display: inline-block; /* Helps center the bottom border perfectly */
             border-bottom: 1px solid rgba(197, 160, 89, 0.3);
             padding-bottom: 10px;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
         }
 
         .text-menu-item {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             display: flex;
             flex-direction: column;
+            align-items: center; /* Ensures the flex container is centered */
         }
 
         .item-name {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: var(--text-main);
             letter-spacing: 0.5px;
+            margin-bottom: 8px;
         }
 
         .item-desc {
             font-size: 0.95rem;
             color: var(--text-muted);
             font-weight: 300;
-            margin-top: 5px;
+            max-width: 600px; /* Keeps lines from stretching too wide */
+            line-height: 1.5;
         }
 
         /* Contact Section */
@@ -391,6 +402,9 @@
             }
             .contact-email {
                 font-size: 1.3rem;
+            }
+            .text-menu-container {
+                padding: 40px 20px;
             }
         }
     </style>
