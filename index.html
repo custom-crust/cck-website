@@ -309,6 +309,14 @@
             line-height: 1.5;
         }
 
+        .catering-note {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-style: italic;
+            margin-top: 10px;
+            display: block;
+        }
+
         /* Contact Section */
         #contact {
             background-color: var(--bg-secondary);
@@ -339,16 +347,10 @@
             color: var(--accent-color);
         }
 
-        .contact-muted {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-style: italic;
-        }
-
         .social-container {
             margin-top: 30px;
             display: flex;
-            gap: 15px; /* Slightly tighter gap to fit more buttons nicely */
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
             max-width: 800px;
@@ -553,13 +555,52 @@
                 </div>
             </div>
 
+            <div class="menu-category">
+                <h3 class="menu-category-title">Catering Packages</h3>
+                <p style="color: var(--text-muted); margin-bottom: 40px; font-style: italic; font-size: 0.95rem;">Perfect for private parties, corporate events, and tailgates. Reach out to our team for a custom quote built around your event location and specific needs.</p>
+                
+                <div class="text-menu-item">
+                    <h4 class="item-name">The Classic Crowd</h4>
+                    <span class="item-sizes">Standard Pizzas (Plain Jane or Cup & Char)</span>
+                    <p class="item-desc">
+                        <strong>Small Group:</strong> Feeds 10-12 (4 Large Pizzas)<br>
+                        <strong>Medium Group:</strong> Feeds 20-25 (8 Large Pizzas)<br>
+                        <strong>Large Group:</strong> Feeds 40-50 (15 Large Pizzas)
+                    </p>
+                    <span class="catering-note">*Please contact us for larger parties.</span>
+                </div>
+
+                <div class="text-menu-item">
+                    <h4 class="item-name">The Premium Experience</h4>
+                    <span class="item-sizes">Mix and Match Any Specialty Pies</span>
+                    <p class="item-desc">
+                        <strong>Small Group:</strong> Feeds 10-12 (4 Large Pizzas)<br>
+                        <strong>Medium Group:</strong> Feeds 20-25 (8 Large Pizzas)<br>
+                        <strong>Large Group:</strong> Feeds 40-50 (15 Large Pizzas)
+                    </p>
+                    <span class="catering-note">*Please contact us for larger parties.</span>
+                </div>
+
+                <div class="text-menu-item">
+                    <h4 class="item-name">The "Bambino" Kids Party</h4>
+                    <span class="item-sizes">Kid-Friendly Customizations</span>
+                    <p class="item-desc">Feeds 12-15 Kids (4 Large Pizzas). Mild sauce, extra cheesy, and "party cut" into 16 smaller slices.</p>
+                    <span class="catering-note">*Please contact us for larger parties.</span>
+                </div>
+
+                <div class="text-menu-item">
+                    <h4 class="item-name">Beverage Add-On</h4>
+                    <p class="item-desc">Assorted canned sodas and bottled water, delivered ice cold for your group.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <section id="contact">
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-info">
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Have a question or want to reach out ahead of our launch? We'd love to hear from you.</p>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Ready to book your event or have a question about the menu? We'd love to hear from you.</p>
             
             <a href="mailto:customcrustkitchen@outlook.com?subject=Inquiry:%20Custom%20Crust%20Kitchen" class="contact-link">customcrustkitchen@outlook.com</a>
             
