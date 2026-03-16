@@ -269,10 +269,10 @@
         .text-menu-container {
             max-width: 900px;
             margin: 0 auto;
-            text-align: center; /* Centers all text */
+            text-align: center; 
             padding: 60px 40px;
             background-color: var(--bg-secondary);
-            border: 1px solid var(--accent-color); /* Creates the luxury themed border */
+            border: 1px solid var(--accent-color); 
             border-radius: 8px;
         }
 
@@ -288,7 +288,7 @@
             font-family: var(--font-heading);
             font-size: 2rem;
             color: var(--accent-color);
-            display: inline-block; /* Helps center the bottom border perfectly */
+            display: inline-block; 
             border-bottom: 1px solid rgba(197, 160, 89, 0.3);
             padding-bottom: 10px;
             margin-bottom: 35px;
@@ -298,7 +298,7 @@
             margin-bottom: 30px;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Ensures the flex container is centered */
+            align-items: center; 
         }
 
         .item-name {
@@ -313,7 +313,7 @@
             font-size: 0.95rem;
             color: var(--text-muted);
             font-weight: 300;
-            max-width: 600px; /* Keeps lines from stretching too wide */
+            max-width: 600px; 
             line-height: 1.5;
         }
 
@@ -452,7 +452,8 @@
             </div>
             <div class="about-image">
                 <div class="image-placeholder bio-image-placeholder">
-                    [ Placeholder: Photo of Christian & Angela / Kitchen ]
+                    <img src="founders-photo.jpg" alt="Christian De Brun and Angela Germano" onerror="this.style.display='none'">
+                    <span style="display: block; width: 100%; height: 100%; position: absolute; z-index: -1;">[ Placeholder: Photo of Christian & Angela ]</span>
                 </div>
             </div>
         </div>
@@ -463,19 +464,25 @@
         
         <div class="menu-grid">
             <div class="menu-item">
-                <div class="menu-image-placeholder">[ Placeholder: Pizza Photo ]</div>
+                <div class="menu-image-placeholder">
+                    <img src="traditional-cheese.jpg" alt="Traditional Cheese Pizza" onerror="this.style.display='none'">
+                </div>
                 <h3>Traditional Cheese</h3>
                 <p>Our signature tomato sauce topped with a perfect blend of premium whole-milk mozzarella.</p>
             </div>
             
             <div class="menu-item">
-                <div class="menu-image-placeholder">[ Placeholder: Pizza Photo ]</div>
+                <div class="menu-image-placeholder">
+                    <img src="meat-lovers.jpg" alt="Meat Lovers Pizza" onerror="this.style.display='none'">
+                </div>
                 <h3>Meat Lovers</h3>
                 <p>Premium pepperoni, sweet Italian sausage, seasoned ground beef, and thick-cut bacon.</p>
             </div>
 
             <div class="menu-item">
-                <div class="menu-image-placeholder">[ Placeholder: Pizza Photo ]</div>
+                <div class="menu-image-placeholder">
+                    <img src="custom-creation.jpg" alt="Custom Creation Pizza" onerror="this.style.display='none'">
+                </div>
                 <h3>Custom Creation</h3>
                 <p>Your canvas, our crust. Choose from our selection of premium meats, fresh vegetables, and artisan cheeses.</p>
             </div>
@@ -544,6 +551,7 @@
 
             <div class="social-container">
                 <a href="https://www.instagram.com/customcrustkitchen/" target="_blank" class="social-btn">Follow on Instagram</a>
+                <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review" target="_blank" class="social-btn">Leave a Google Review</a>
             </div>
         </div>
     </section>
