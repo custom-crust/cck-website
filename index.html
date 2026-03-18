@@ -108,9 +108,16 @@
             padding-top: 150px; 
         }
 
+        /* Added smooth pulse/float effect to main logo */
         .main-logo {
             max-width: 350px;
             margin-bottom: 40px;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .main-logo:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.2));
         }
 
         #home h1 {
@@ -128,7 +135,7 @@
             color: var(--text-muted);
         }
 
-        /* CTA Button */
+        /* CTA Button - Added physical lift */
         .cta-button {
             background-color: transparent;
             color: var(--accent-color);
@@ -140,8 +147,16 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             text-decoration: none;
-            cursor: default; 
+            cursor: pointer; 
             opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: rgba(197, 160, 89, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
+            opacity: 1;
         }
 
         /* About Section - Centered Layout */
@@ -167,7 +182,7 @@
 
         .about-image {
             margin: 60px auto;
-            max-width: 800px;
+            max-width: 600px; /* Shrunk from 800px to 600px */
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid #333;
@@ -229,11 +244,17 @@
             overflow: hidden;
         }
 
+        /* Added smooth inner image zoom */
         .menu-image-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .menu-image-placeholder img {
+            transform: scale(1.08);
         }
 
         .menu-item h3 {
@@ -283,6 +304,11 @@
             display: flex;
             flex-direction: column;
             align-items: center; 
+            transition: transform 0.3s ease;
+        }
+
+        .text-menu-item:hover {
+            transform: translateY(-3px);
         }
 
         .item-name {
@@ -356,6 +382,7 @@
             max-width: 800px;
         }
 
+        /* Added physical lift to social buttons */
         .social-btn {
             background-color: transparent;
             color: var(--accent-color);
@@ -373,6 +400,8 @@
         .social-btn:hover {
             background-color: var(--accent-color);
             color: var(--bg-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
         }
 
         /* Footer */
@@ -397,6 +426,9 @@
             }
             .text-menu-container {
                 padding: 40px 20px;
+            }
+            .about-image {
+                max-width: 100%; /* Ensures it scales well on phones */
             }
         }
     </style>
@@ -505,7 +537,7 @@
                 <div class="text-menu-item">
                     <h4 class="item-name">The Springfield Classic (Margherita)</h4>
                     <span class="item-sizes">12" & 16"</span>
-                    <p class="item-desc">Marinara sauce base, light Grande mozzarella, fresh mozzarella, fresh tomatoes, and fresh basil.</p>
+                    <p class="item-desc">Light house red sauce, light Grande mozzarella, fresh mozzarella, fresh tomatoes, and fresh basil.</p>
                 </div>
 
                 <div class="text-menu-item">
@@ -553,6 +585,21 @@
                 <div class="text-menu-item">
                     <h4 class="item-name">Kids Make Your Own</h4>
                     <p class="item-desc">Let the little ones get creative with their favorite toppings!</p>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="menu-category-title">Additional Toppings</h3>
+                <p style="color: var(--text-muted); margin-bottom: 40px; font-style: italic; font-size: 0.95rem;">Customize any pie or build your own from scratch. Additional charges apply depending on the size of the pizza.</p>
+                
+                <div class="text-menu-item">
+                    <h4 class="item-name">Standard Toppings</h4>
+                    <p class="item-desc">Onions, Green Peppers, Mushrooms, Black Olives, Broccoli, Spinach, Sliced Garlic</p>
+                </div>
+
+                <div class="text-menu-item">
+                    <h4 class="item-name">Premium Toppings</h4>
+                    <p class="item-desc">Premium Sliced Pepperoni, Savory Italian Sausage, Hot Honey Candied Bacon, Diced Chicken, Ricotta Cheese, Fresh Mozzarella, Extra Grande Mozzarella</p>
                 </div>
             </div>
 
