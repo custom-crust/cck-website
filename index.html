@@ -31,11 +31,14 @@
             color: var(--text-main);
             font-family: var(--font-body);
             line-height: 1.6;
-            /* Prevents the Google Translate bar from pushing the page down awkwardly */
+            /* Prevents the Google Translate bar from pushing the page down */
             top: 0 !important;
         }
 
-        /* Hides the default Google Translate top banner */
+        /* Completely hide the Google Translate widget and top banner */
+        #google_translate_element {
+            display: none !important;
+        }
         .skiptranslate iframe {
             display: none !important;
         }
@@ -69,13 +72,6 @@
             opacity: 0.8;
         }
 
-        /* Wrap links and translate in a container for alignment */
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
         .nav-links {
             list-style: none;
             display: flex;
@@ -93,41 +89,6 @@
 
         .nav-links a:hover {
             color: var(--accent-color);
-        }
-
-        /* Custom Styling for the Google Translate Dropdown */
-        #google_translate_element select {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid rgba(197, 160, 89, 0.5);
-            padding: 5px 10px;
-            font-family: var(--font-body);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 4px;
-            cursor: pointer;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-        
-        #google_translate_element select:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
-        }
-
-        #google_translate_element select option {
-            background-color: var(--bg-secondary);
-            color: var(--text-main);
-        }
-
-        /* Hides the Google logo in the translate widget */
-        .goog-logo-link {
-            display:none !important;
-        }
-        .goog-te-gadget {
-            color: transparent !important;
-            font-size: 0px !important;
         }
 
         /* Universal Section Styling */
@@ -464,10 +425,6 @@
 
         /* Responsive adjustments for mobile phones */
         @media (max-width: 768px) {
-            .nav-right {
-                flex-direction: column-reverse; /* Puts translate above hidden links */
-                gap: 10px;
-            }
             .nav-links {
                 display: none; 
             }
@@ -492,16 +449,12 @@
         <a href="#home" class="nav-logo-link">
             <img src="CCK_Logo.png" alt="Custom Crust Kitchen" class="nav-logo">
         </a>
-        
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Our Story</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-            <div id="google_translate_element"></div>
-        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
     </nav>
 
     <section id="home">
@@ -728,11 +681,31 @@
         <p>&copy; 2026 Custom Crust Kitchen LLC. All Rights Reserved.</p>
     </footer>
 
+    <div id="google_translate_element"></div>
+
     <script type="text/javascript">
+        // 1. Detect the user's phone/browser language
+        var userLang = navigator.language || navigator.userLanguage;
+        var targetLang = 'en'; // Default to English
+
+        // Check if the device is set to Portuguese or Spanish
+        if (userLang.toLowerCase().startsWith('pt')) {
+            targetLang = 'pt';
+        } else if (userLang.toLowerCase().startsWith('es')) {
+            targetLang = 'es';
+        } 
+        // You can add more 'else if' statements here for French ('fr'), etc.
+
+        // 2. If it's not English, set the hidden translation cookie BEFORE the script loads
+        if (targetLang !== 'en') {
+            document.cookie = "googtrans=/en/" + targetLang + "; path=/";
+            document.cookie = "googtrans=/en/" + targetLang + "; domain=." + document.domain + "; path=/";
+        }
+
+        // 3. Initialize the invisible Google Translate engine
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
         }
