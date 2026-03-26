@@ -31,6 +31,13 @@
             color: var(--text-main);
             font-family: var(--font-body);
             line-height: 1.6;
+            /* Prevents the Google Translate bar from pushing the page down awkwardly */
+            top: 0 !important;
+        }
+
+        /* Hides the default Google Translate top banner */
+        .skiptranslate iframe {
+            display: none !important;
         }
 
         /* Fixed Navigation Bar */
@@ -62,6 +69,13 @@
             opacity: 0.8;
         }
 
+        /* Wrap links and translate in a container for alignment */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
         .nav-links {
             list-style: none;
             display: flex;
@@ -79,6 +93,41 @@
 
         .nav-links a:hover {
             color: var(--accent-color);
+        }
+
+        /* Custom Styling for the Google Translate Dropdown */
+        #google_translate_element select {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid rgba(197, 160, 89, 0.5);
+            padding: 5px 10px;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        #google_translate_element select:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        #google_translate_element select option {
+            background-color: var(--bg-secondary);
+            color: var(--text-main);
+        }
+
+        /* Hides the Google logo in the translate widget */
+        .goog-logo-link {
+            display:none !important;
+        }
+        .goog-te-gadget {
+            color: transparent !important;
+            font-size: 0px !important;
         }
 
         /* Universal Section Styling */
@@ -415,6 +464,10 @@
 
         /* Responsive adjustments for mobile phones */
         @media (max-width: 768px) {
+            .nav-right {
+                flex-direction: column-reverse; /* Puts translate above hidden links */
+                gap: 10px;
+            }
             .nav-links {
                 display: none; 
             }
@@ -439,12 +492,16 @@
         <a href="#home" class="nav-logo-link">
             <img src="CCK_Logo.png" alt="Custom Crust Kitchen" class="nav-logo">
         </a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Our Story</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
+        
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div id="google_translate_element"></div>
+        </div>
     </nav>
 
     <section id="home">
@@ -670,6 +727,17 @@
         <p>Opening soon in a location near you.</p>
         <p>&copy; 2026 Custom Crust Kitchen LLC. All Rights Reserved.</p>
     </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
