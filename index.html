@@ -110,7 +110,7 @@
 
         .main-logo {
             max-width: 350px;
-            width: 100%; /* Force width to prevent "massive logo" bug */
+            width: 100%; /* Fix for potential layout explosion */
             margin-bottom: 40px;
             transition: transform 0.5s ease, filter 0.5s ease;
         }
@@ -159,7 +159,7 @@
             opacity: 1;
         }
 
-        /* About Section - Centered Layout */
+        /* About Section */
         #about {
             background-color: var(--bg-secondary);
             border-radius: 8px;
@@ -215,7 +215,7 @@
             margin-bottom: 20px;
         }
 
-        /* Menu Section - Featured Grid */
+        /* Menu Grid Section */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -269,7 +269,7 @@
             font-weight: 300;
         }
 
-        /* Menu Section - Text List */
+        /* Text Menu List Section */
         .text-menu-container {
             max-width: 900px;
             margin: 0 auto;
@@ -370,6 +370,7 @@
             gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
+            max-width: 800px;
         }
 
         .social-btn {
@@ -393,7 +394,6 @@
             box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -405,6 +405,7 @@
         @media (max-width: 768px) {
             .nav-links { display: none; }
             #home h1 { font-size: 2.5rem; }
+            .text-menu-container { padding: 40px 20px; }
         }
     </style>
 </head>
@@ -443,14 +444,14 @@
                 <h3 class="bio-name">Angela Germano</h3>
                 <h4 class="bio-title">Founder & CEO</h4>
                 <p>The entrepreneurial backbone of Custom Crust Kitchen, Angela brings a rich international culinary background and a relentless work ethic to the brand. Originally from Brazil, her journey has spanned continents, exploring the vibrant culinary traditions of both Brazil and Portugal, where she gained invaluable experience working in demanding restaurant environments.</p>
-                <p>Today, she is a highly respected and well-known business owner in the local community. As Christian's mother-in-law, Angela is the matriarch of this venture, ensuring that Custom Crust Kitchen remains true to its core identity: a genuine family business.</p>
+                <p>Today, she is a highly respected and well-known business owner in the local community. As Christian's mother-in-law, Angela is the matriarch of this venture, ensuring that Custom Crust Kitchen remains true to its core identity: a genuine family business. Her visionary leadership, deep entrepreneurial experience, and uncompromising standard for quality are what elevate our kitchen from a simple pizzeria to a premium catering experience.</p>
             </div>
 
             <div class="bio-section">
                 <h3 class="bio-name">Christian De Brun</h3>
                 <h4 class="bio-title">Founder & Director of Operations</h4>
-                <p>Christian’s culinary journey began long before he stepped into a professional kitchen. Immigrating to the United States from Uruguay in 2001 at the age of 14, he learned the foundational love of cooking from his mother, who also built her life working in kitchens across the country.</p>
-                <p>Over the years, he climbed the ranks to General Manager, overseeing operations everywhere from high-volume venues to premium, high-end restaurants. Today, Custom Crust Kitchen is the culmination of his deep-rooted passion for hospitality and his enduring culinary love.</p>
+                <p>Christian’s culinary journey began long before he stepped into a professional kitchen. Immigrating to the United States from Uruguay in 2001 at the age of 14, he learned the foundational love of cooking from his mother, who also built her life working in kitchens across the country. Starting from the ground up while still in high school, Christian carried a simple philosophy: whether washing dishes or catering a luxury event, always be the absolute best and make every guest feel at home.</p>
+                <p>Over the years, he climbed the ranks to General Manager, overseeing operations everywhere from high-volume venues to premium, high-end restaurants. In 2008, his trajectory changed when he immersed himself in authentic Italian cuisine at a legendary, landmark pizzeria in Springfield, Massachusetts. It was there that he truly honed his craft and developed a lifelong obsession with the art of the perfect dough. Today, Custom Crust Kitchen is the culmination of his deep-rooted passion for hospitality and his enduring culinary love.</p>
             </div>
         </div>
     </section>
@@ -461,25 +462,19 @@
         
         <div class="menu-grid">
             <div class="menu-item">
-                <div class="menu-image-placeholder">
-                    <img src="traditional-cheese.jpg" alt="The Plain Jane (Cheese Pizza)">
-                </div>
+                <div class="menu-image-placeholder"><img src="traditional-cheese.jpg" alt="The Plain Jane"></div>
                 <h3>The Plain Jane (Cheese)</h3>
                 <p>House red sauce topped perfectly with premium Grande mozzarella.</p>
             </div>
             
             <div class="menu-item">
-                <div class="menu-image-placeholder">
-                    <img src="meat-lovers.jpg" alt="The Carnivore (Meat Lovers Pizza)">
-                </div>
+                <div class="menu-image-placeholder"><img src="meat-lovers.jpg" alt="The Carnivore"></div>
                 <h3>The Carnivore (Meat Lovers)</h3>
                 <p>Loaded with premium sliced pepperoni, Italian sausage, and crispy bacon cooked in Mike's Hot Honey.</p>
             </div>
 
             <div class="menu-item">
-                <div class="menu-image-placeholder">
-                    <img src="custom-creation.jpg" alt="Custom Creation Pizza">
-                </div>
+                <div class="menu-image-placeholder"><img src="custom-creation.jpg" alt="Custom Creation"></div>
                 <h3>Custom Creation (Build Your Own)</h3>
                 <p>Your canvas, our crust. Choose from our selection of premium meats, fresh vegetables, and artisan cheeses.</p>
             </div>
@@ -508,6 +503,71 @@
                     <span class="item-sizes">12" & 16"</span>
                     <p class="item-desc">Light house red sauce, light Grande mozzarella, fresh mozzarella, fresh tomatoes, and fresh basil.</p>
                 </div>
+                <div class="text-menu-item">
+                    <h4 class="item-name">The Buffalo Soldier (Buffalo Chicken)</h4>
+                    <span class="item-sizes">12" & 16"</span>
+                    <p class="item-desc">Diced chicken, buffalo swirl, Grande mozzarella, and a blue cheese finish.</p>
+                </div>
+                <div class="text-menu-item">
+                    <h4 class="item-name">The Bianco Veggie</h4>
+                    <span class="item-sizes">12" & 16"</span>
+                    <p class="item-desc">White pie featuring olive oil and garlic, Grande mozzarella, ricotta, broccoli, and black olives.</p>
+                </div>
+                <div class="text-menu-item">
+                    <h4 class="item-name">The Wheatless Wonder (Gluten-Friendly)</h4>
+                    <span class="item-sizes">10"</span>
+                    <p class="item-desc">Cauliflower crust. Note: Shared oven, not for severe allergies.</p>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="menu-category-title">Calzones</h3>
+                <div class="text-menu-item">
+                    <h4 class="item-name">Create Your Own Calzone</h4>
+                    <span class="item-sizes">Medium & Large</span>
+                    <p class="item-desc">Ricotta, Grande mozzarella, and your choice of ingredients. Served with 4oz signature sauce.</p>
+                    <span class="catering-note">*Extra sauce available for an additional charge.</span>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="menu-category-title">Kids Menu</h3>
+                <div class="text-menu-item">
+                    <h4 class="item-name">Kids Cheese Pizza</h4>
+                    <p class="item-desc">Grande mozzarella on a traditional thick crust.</p>
+                </div>
+                <div class="text-menu-item">
+                    <h4 class="item-name">Kids Pepperoni Pizza</h4>
+                    <p class="item-desc">Premium sliced pepperoni on a traditional thick crust.</p>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="menu-category-title">Additional Toppings</h3>
+                <div class="text-menu-item">
+                    <h4 class="item-name">Standard Toppings</h4>
+                    <p class="item-desc">Onions, Green Peppers, Mushrooms, Black Olives, Broccoli, Fresh Tomatoes</p>
+                </div>
+                <div class="text-menu-item">
+                    <h4 class="item-name">Premium Toppings</h4>
+                    <p class="item-desc">Pepperoni, Italian Sausage, Candied Bacon, Diced Chicken, Ricotta, Fresh Mozzarella</p>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="menu-category-title">Catering Packages</h3>
+                <div class="text-menu-item">
+                    <h4 class="item-name">The Classic Crowd</h4>
+                    <p class="item-desc"><strong>Small:</strong> Feeds 10-12 | <strong>Medium:</strong> Feeds 20-25 | <strong>Large:</strong> Feeds 40-50</p>
+                </div>
+                <div class="text-menu-item">
+                    <h4 class="item-name">The Premium Experience</h4>
+                    <p class="item-desc">Mix and match any specialty pies. Contact us for custom quotes.</p>
+                </div>
+                <div class="text-menu-item">
+                    <h4 class="item-name">The "Bambino" Kids Party</h4>
+                    <p class="item-desc">Feeds 12-15 Kids (4 Large Pizzas). Traditional thick crust, party-cut into 16 slices.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -515,12 +575,14 @@
     <section id="contact">
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-info">
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Ready to book your event?</p>
-            <a href="mailto:customcrustkitchen@outlook.com" class="contact-link">customcrustkitchen@outlook.com</a>
+            <a href="mailto:customcrustkitchen@outlook.com?subject=Inquiry" class="contact-link">customcrustkitchen@outlook.com</a>
             <a href="tel:+16176552502" class="contact-link">(617) 655-2502</a>
             <div class="social-container">
-                <a href="https://www.instagram.com/customcrustkitchen/" target="_blank" class="social-btn">Instagram</a>
+                <a href="https://wa.me/16176552502" target="_blank" class="social-btn">Chat With Us</a>
                 <a href="https://www.facebook.com/profile.php?id=61578503514299" target="_blank" class="social-btn">Facebook</a>
+                <a href="https://www.instagram.com/customcrustkitchen/" target="_blank" class="social-btn">Instagram</a>
+                <a href="https://x.com/customcrustkit" target="_blank" class="social-btn">X</a>
+                <a href="https://g.page/r/CbGSCMsYjS0XEAI/review" target="_blank" class="social-btn">Google Review</a>
             </div>
         </div>
     </section>
@@ -534,6 +596,5 @@
         document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=." + document.domain + "; path=/;";
         document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + document.domain + "; path=/;";
     </script>
-
 </body>
 </html>
