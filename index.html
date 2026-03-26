@@ -1,675 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Crust Kitchen | Boston, MA</title>
-    <style>
-        /* Import Luxury Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Crust Kitchen | Boston, MA</title>
+    <style>
+        /* Import Luxury Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 
-        /* Dark Theme Variables */
-        :root {
-            --bg-color: #121212; 
-            --bg-secondary: #1a1a1a; 
-            --text-main: #f5f5f5; 
-            --text-muted: #b0b0b0;
-            --accent-color: #c5a059; 
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Montserrat', sans-serif;
-        }
+        /* Dark Theme Variables */
+        :root {
+            --bg-color: #121212; 
+            --bg-secondary: #1a1a1a; 
+            --text-main: #f5f5f5; 
+            --text-muted: #b0b0b0;
+            --accent-color: #c5a059; 
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth; 
-        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth; 
+        }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            line-height: 1.6;
-        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
 
-        /* Fixed Navigation Bar */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(18, 18, 18, 0.95);
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-        }
+        /* Fixed Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(18, 18, 18, 0.95);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        }
 
-        .nav-logo-link {
-            display: flex;
-            align-items: center;
-        }
+        .nav-logo-link {
+            display: flex;
+            align-items: center;
+        }
 
-        .nav-logo {
-            height: 50px; 
-            width: auto;
-            transition: opacity 0.3s ease;
-        }
+        .nav-logo {
+            height: 50px; 
+            width: auto;
+            transition: opacity 0.3s ease;
+        }
 
-        .nav-logo:hover {
-            opacity: 0.8;
-        }
+        .nav-logo:hover {
+            opacity: 0.8;
+        }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
 
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
 
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
 
-        /* Universal Section Styling */
-        section {
-            padding: 120px 20px 80px; 
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        /* Universal Section Styling */
+        section {
+            padding: 120px 20px 80px; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            text-align: center;
-            margin-bottom: 50px;
-            font-weight: 400;
-        }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
 
-        /* Hero Section (Home) */
-        #home {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            padding-top: 150px; 
-        }
+        /* Hero Section (Home) */
+        #home {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 150px; 
+        }
 
-        /* Added smooth pulse/float effect to main logo */
-        .main-logo {
-            max-width: 350px;
-            margin-bottom: 40px;
-            transition: transform 0.5s ease, filter 0.5s ease;
-        }
+        .main-logo {
+            max-width: 350px;
+            width: 100%; /* Force width to prevent "massive logo" bug */
+            margin-bottom: 40px;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
 
-        .main-logo:hover {
-            transform: scale(1.03);
-            filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.2));
-        }
+        .main-logo:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.2));
+        }
 
-        #home h1 {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
+        #home h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
 
-        #home p {
-            font-weight: 300;
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 40px;
-            color: var(--text-muted);
-        }
+        #home p {
+            font-weight: 300;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 40px;
+            color: var(--text-muted);
+        }
 
-        /* CTA Button - Added physical lift */
-        .cta-button {
-            background-color: transparent;
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-            padding: 15px 40px;
-            font-size: 0.9rem;
-            font-family: var(--font-body);
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-decoration: none;
-            cursor: pointer; 
-            opacity: 0.8;
-            transition: all 0.3s ease;
-        }
+        .cta-button {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 15px 40px;
+            font-size: 0.9rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer; 
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
 
-        .cta-button:hover {
-            background-color: rgba(197, 160, 89, 0.1);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
-            opacity: 1;
-        }
+        .cta-button:hover {
+            background-color: rgba(197, 160, 89, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
+            opacity: 1;
+        }
 
-        /* About Section - Centered Layout */
-        #about {
-            background-color: var(--bg-secondary);
-            border-radius: 8px;
-            padding: 80px 40px;
-            margin-bottom: 60px;
-            text-align: center;
-        }
+        /* About Section - Centered Layout */
+        #about {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 80px 40px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
 
-        .about-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-        .about-container p {
-            margin-bottom: 20px;
-            color: var(--text-muted);
-            font-weight: 300;
-            line-height: 1.7;
-        }
+        .about-container p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.7;
+        }
 
-        .about-image {
-            margin: 60px auto;
-            max-width: 600px; 
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #333;
-        }
+        .about-image {
+            margin: 60px auto;
+            max-width: 600px; 
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
 
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-        .bio-section {
-            margin-top: 50px;
-            padding-top: 50px;
-            border-top: 1px solid rgba(197, 160, 89, 0.3);
-        }
+        .bio-section {
+            margin-top: 50px;
+            padding-top: 50px;
+            border-top: 1px solid rgba(197, 160, 89, 0.3);
+        }
 
-        .bio-name {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            color: var(--text-main);
-            margin-bottom: 5px;
-        }
+        .bio-name {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
 
-        .bio-title {
-            color: var(--accent-color);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
+        .bio-title {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
 
-        /* Menu Section - Featured Grid */
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
-        }
+        /* Menu Section - Featured Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
 
-        .menu-item {
-            background-color: var(--bg-secondary);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+        .menu-item {
+            background-color: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
 
-        .menu-item:hover {
-            transform: translateY(-5px);
-        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
 
-        .menu-image-placeholder {
-            background-color: #2a2a2a;
-            width: 100%;
-            height: 250px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
+        .menu-image-placeholder {
+            background-color: #2a2a2a;
+            width: 100%;
+            height: 250px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
 
-        /* Added smooth inner image zoom */
-        .menu-image-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
+        .menu-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
 
-        .menu-item:hover .menu-image-placeholder img {
-            transform: scale(1.08);
-        }
+        .menu-item:hover .menu-image-placeholder img {
+            transform: scale(1.08);
+        }
 
-        .menu-item h3 {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-        }
+        .menu-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
 
-        .menu-item p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 300;
-        }
+        .menu-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
 
-        /* Menu Section - Text List (Centered Box Design) */
-        .text-menu-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center; 
-            padding: 60px 40px;
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--accent-color); 
-            border-radius: 8px;
-        }
+        /* Menu Section - Text List */
+        .text-menu-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center; 
+            padding: 60px 40px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--accent-color); 
+            border-radius: 8px;
+        }
 
-        .menu-category {
-            margin-bottom: 60px;
-        }
+        .menu-category {
+            margin-bottom: 60px;
+        }
 
-        .menu-category:last-child {
-            margin-bottom: 0;
-        }
+        .menu-category-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--accent-color);
+            display: inline-block; 
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            padding-bottom: 10px;
+            margin-bottom: 35px;
+        }
 
-        .menu-category-title {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            color: var(--accent-color);
-            display: inline-block; 
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-            padding-bottom: 10px;
-            margin-bottom: 35px;
-        }
+        .text-menu-item {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            transition: transform 0.3s ease;
+        }
 
-        .text-menu-item {
-            margin-bottom: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-            transition: transform 0.3s ease;
-        }
+        .item-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
 
-        .text-menu-item:hover {
-            transform: translateY(-3px);
-        }
+        .item-sizes {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
 
-        .item-name {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-main);
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
-        }
+        .item-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            max-width: 600px; 
+            line-height: 1.5;
+        }
 
-        .item-sizes {
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--accent-color);
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
+        .catering-note {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-style: italic;
+            margin-top: 10px;
+            display: block;
+        }
 
-        .item-desc {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-weight: 300;
-            max-width: 600px; 
-            line-height: 1.5;
-        }
+        /* Contact Section */
+        #contact {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 80px 40px;
+            text-align: center;
+            margin-bottom: 60px;
+            margin-top: 60px;
+        }
 
-        .catering-note {
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            font-style: italic;
-            margin-top: 10px;
-            display: block;
-        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
 
-        /* Contact Section */
-        #contact {
-            background-color: var(--bg-secondary);
-            border-radius: 8px;
-            padding: 80px 40px;
-            text-align: center;
-            margin-bottom: 60px;
-            margin-top: 60px;
-        }
+        .contact-link {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin-bottom: 10px;
+        }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
+        .contact-link:hover {
+            color: var(--accent-color);
+        }
 
-        .contact-link {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            color: var(--text-main);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            margin-bottom: 10px;
-        }
+        .social-container {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-        .contact-link:hover {
-            color: var(--accent-color);
-        }
+        .social-btn {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 12px 25px;
+            font-size: 0.85rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-        .social-container {
-            margin-top: 30px;
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            max-width: 800px;
-        }
+        .social-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+        }
 
-        /* Added physical lift to social buttons */
-        .social-btn {
-            background-color: transparent;
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-            padding: 12px 25px;
-            font-size: 0.85rem;
-            font-family: var(--font-body);
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #222;
+        }
 
-        .social-btn:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9rem;
-            color: #666;
-            border-top: 1px solid #222;
-        }
-
-        /* Responsive adjustments for mobile phones */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; 
-            }
-            #home h1 {
-                font-size: 2.5rem;
-            }
-            .contact-link {
-                font-size: 1.3rem;
-            }
-            .text-menu-container {
-                padding: 40px 20px;
-            }
-            .about-image {
-                max-width: 100%; 
-            }
-        }
-    </style>
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            #home h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#home" class="nav-logo-link">
-            <img src="CCK_Logo.png" alt="Custom Crust Kitchen" class="nav-logo">
-        </a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Our Story</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
-    </nav>
+    <nav>
+        <a href="#home" class="nav-logo-link">
+            <img src="CCK_Logo.png" alt="Custom Crust Kitchen" class="nav-logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
 
-    <section id="home">
-        <img src="CCK_Logo.png" alt="Custom Crust Kitchen Logo" class="main-logo">
-        <h1>Crafted to Perfection.</h1>
-        <p>Experience the art of our signature premium artisan thin crust. High-end ingredients, masterful technique, and a pie like no other. <br><span style="font-size: 0.9rem; font-style: italic; color: var(--accent-color);">Traditional thicker crust available upon request.</span></p>
-        
-        <div class="cta-button">Online Ordering Coming Soon</div>
-    </section>
+    <section id="home">
+        <img src="CCK_Logo.png" alt="Custom Crust Kitchen Logo" class="main-logo">
+        <h1>Crafted to Perfection.</h1>
+        <p>Experience the art of our signature premium artisan thin crust. High-end ingredients, masterful technique, and a pie like no other. <br><span style="font-size: 0.9rem; font-style: italic; color: var(--accent-color);">Traditional thicker crust available upon request.</span></p>
+        <div class="cta-button">Online Ordering Coming Soon</div>
+    </section>
 
-    <section id="about">
-        <h2 class="section-title">Our Story</h2>
-        <div class="about-container">
-            <p>Welcome to Custom Crust Kitchen. We believe in the power of incredible food to bring people together, using only the finest ingredients to craft a truly unforgettable pizza experience. While we specialize in our signature premium artisan thin crust, our name is Custom Crust Kitchen for a reason—we are always happy to craft a traditional, thicker crust upon request to suit your exact event.</p>
-            <p>With our combined decades of hospitality and culinary experience, we are equipped to cater to your every need—whether it’s an intimate backyard party, a large-scale event, or a vibrant food festival. With an unwavering commitment to fresh, high-end products like premium Grande Mozzarella, we promise to stay true to the authentic art of Italian cuisine, straight from our family to yours.</p>
-            
-            <div class="about-image">
-                <img src="founders-photo.jpg" alt="Angela Germano and Christian De Brun">
-            </div>
+    <section id="about">
+        <h2 class="section-title">Our Story</h2>
+        <div class="about-container">
+            <p>Welcome to Custom Crust Kitchen. We believe in the power of incredible food to bring people together, using only the finest ingredients to craft a truly unforgettable pizza experience. While we specialize in our signature premium artisan thin crust, our name is Custom Crust Kitchen for a reason—we are always happy to craft a traditional, thicker crust upon request to suit your exact event.</p>
+            <p>With our combined decades of hospitality and culinary experience, we are equipped to cater to your every need—whether it’s an intimate backyard party, a large-scale event, or a vibrant food festival. With an unwavering commitment to fresh, high-end products like premium Grande Mozzarella, we promise to stay true to the authentic art of Italian cuisine, straight from our family to yours.</p>
+            
+            <div class="about-image">
+                <img src="founders-photo.jpg" alt="Angela Germano and Christian De Brun">
+            </div>
 
-            <div class="bio-section">
-                <h3 class="bio-name">Angela Germano</h3>
-                <h4 class="bio-title">Founder & CEO</h4>
-                <p>The entrepreneurial backbone of Custom Crust Kitchen, Angela brings a rich international culinary background and a relentless work ethic to the brand. Originally from Brazil, her journey has spanned continents, exploring the vibrant culinary traditions of both Brazil and Portugal, where she gained invaluable experience working in demanding restaurant environments.</p>
-                <p>Today, she is a highly respected and well-known business owner in the local community. As Christian's mother-in-law, Angela is the matriarch of this venture, ensuring that Custom Crust Kitchen remains true to its core identity: a genuine family business. Her visionary leadership, deep entrepreneurial experience, and uncompromising standard for quality are what elevate our kitchen from a simple pizzeria to a premium catering experience.</p>
-            </div>
+            <div class="bio-section">
+                <h3 class="bio-name">Angela Germano</h3>
+                <h4 class="bio-title">Founder & CEO</h4>
+                <p>The entrepreneurial backbone of Custom Crust Kitchen, Angela brings a rich international culinary background and a relentless work ethic to the brand. Originally from Brazil, her journey has spanned continents, exploring the vibrant culinary traditions of both Brazil and Portugal, where she gained invaluable experience working in demanding restaurant environments.</p>
+                <p>Today, she is a highly respected and well-known business owner in the local community. As Christian's mother-in-law, Angela is the matriarch of this venture, ensuring that Custom Crust Kitchen remains true to its core identity: a genuine family business.</p>
+            </div>
 
-            <div class="bio-section">
-                <h3 class="bio-name">Christian De Brun</h3>
-                <h4 class="bio-title">Founder & Director of Operations</h4>
-                <p>Christian’s culinary journey began long before he stepped into a professional kitchen. Immigrating to the United States from Uruguay in 2001 at the age of 14, he learned the foundational love of cooking from his mother, who also built her life working in kitchens across the country. Starting from the ground up while still in high school, Christian carried a simple philosophy: whether washing dishes or catering a luxury event, always be the absolute best and make every guest feel at home.</p>
-                <p>Over the years, he climbed the ranks to General Manager, overseeing operations everywhere from high-volume venues to premium, high-end restaurants. In 2008, his trajectory changed when he immersed himself in authentic Italian cuisine at a legendary, landmark pizzeria in Springfield, Massachusetts. It was there that he truly honed his craft and developed a lifelong obsession with the art of the perfect dough. Today, Custom Crust Kitchen is the culmination of his deep-rooted passion for hospitality and his enduring culinary love.</p>
-            </div>
-        </div>
-    </section>
+            <div class="bio-section">
+                <h3 class="bio-name">Christian De Brun</h3>
+                <h4 class="bio-title">Founder & Director of Operations</h4>
+                <p>Christian’s culinary journey began long before he stepped into a professional kitchen. Immigrating to the United States from Uruguay in 2001 at the age of 14, he learned the foundational love of cooking from his mother, who also built her life working in kitchens across the country.</p>
+                <p>Over the years, he climbed the ranks to General Manager, overseeing operations everywhere from high-volume venues to premium, high-end restaurants. Today, Custom Crust Kitchen is the culmination of his deep-rooted passion for hospitality and his enduring culinary love.</p>
+            </div>
+        </div>
+    </section>
 
-    <section id="menu">
-        <h2 class="section-title">The Menu</h2>
-        <p style="text-align:center; color: var(--text-muted); margin-bottom: 50px; font-style: italic;">All our pizzas are built on our signature Premium Artisan Thin Crust.<br><span style="color: var(--accent-color);">Traditional crust is always available upon request!</span></p>
-        
-        <div class="menu-grid">
-            <div class="menu-item">
-                <div class="menu-image-placeholder">
-                    <img src="traditional-cheese.jpg" alt="The Plain Jane (Cheese Pizza)">
-                </div>
-                <h3>The Plain Jane (Cheese)</h3>
-                <p>House red sauce topped perfectly with premium Grande mozzarella.</p>
-            </div>
-            
-            <div class="menu-item">
-                <div class="menu-image-placeholder">
-                    <img src="meat-lovers.jpg" alt="The Carnivore (Meat Lovers Pizza)">
-                </div>
-                <h3>The Carnivore (Meat Lovers)</h3>
-                <p>Loaded with premium sliced pepperoni, Italian sausage, and crispy bacon cooked in Mike's Hot Honey.</p>
-            </div>
+    <section id="menu">
+        <h2 class="section-title">The Menu</h2>
+        <p style="text-align:center; color: var(--text-muted); margin-bottom: 50px; font-style: italic;">All our pizzas are built on our signature Premium Artisan Thin Crust.<br><span style="color: var(--accent-color);">Traditional crust is always available upon request!</span></p>
+        
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="menu-image-placeholder">
+                    <img src="traditional-cheese.jpg" alt="The Plain Jane (Cheese Pizza)">
+                </div>
+                <h3>The Plain Jane (Cheese)</h3>
+                <p>House red sauce topped perfectly with premium Grande mozzarella.</p>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-image-placeholder">
+                    <img src="meat-lovers.jpg" alt="The Carnivore (Meat Lovers Pizza)">
+                </div>
+                <h3>The Carnivore (Meat Lovers)</h3>
+                <p>Loaded with premium sliced pepperoni, Italian sausage, and crispy bacon cooked in Mike's Hot Honey.</p>
+            </div>
 
-            <div class="menu-item">
-                <div class="menu-image-placeholder">
-                    <img src="custom-creation.jpg" alt="Custom Creation Pizza">
-                </div>
-                <h3>Custom Creation (Build Your Own)</h3>
-                <p>Your canvas, our crust. Choose from our selection of premium meats, fresh vegetables, and artisan cheeses.</p>
-            </div>
-        </div>
+            <div class="menu-item">
+                <div class="menu-image-placeholder">
+                    <img src="custom-creation.jpg" alt="Custom Creation Pizza">
+                </div>
+                <h3>Custom Creation (Build Your Own)</h3>
+                <p>Your canvas, our crust. Choose from our selection of premium meats, fresh vegetables, and artisan cheeses.</p>
+            </div>
+        </div>
 
-        <div class="text-menu-container">
-            
-            <div class="menu-category">
-                <h3 class="menu-category-title">Signature Pizzas</h3>
-                
-                <div class="text-menu-item">
-                    <h4 class="item-name">The Plain Jane (Cheese)</h4>
-                    <span class="item-sizes">12" & 16"</span>
-                    <p class="item-desc">House red sauce topped perfectly with premium Grande mozzarella.</p>
-                </div>
-                
-                <div class="text-menu-item">
-                    <h4 class="item-name">The Premium Pepperoni</h4>
-                    <span class="item-sizes">12" & 16"</span>
-                    <p class="item-desc">Our house red sauce and Grande mozzarella, generously topped with premium sliced pepperoni.</p>
-                </div>
+        <div class="text-menu-container">
+            <div class="menu-category">
+                <h3 class="menu-category-title">Signature Pizzas</h3>
+                <div class="text-menu-item">
+                    <h4 class="item-name">The Plain Jane (Cheese)</h4>
+                    <span class="item-sizes">12" & 16"</span>
+                    <p class="item-desc">House red sauce topped perfectly with premium Grande mozzarella.</p>
+                </div>
+                <div class="text-menu-item">
+                    <h4 class="item-name">The Premium Pepperoni</h4>
+                    <span class="item-sizes">12" & 16"</span>
+                    <p class="item-desc">Our house red sauce and Grande mozzarella, generously topped with premium sliced pepperoni.</p>
+                </div>
+                <div class="text-menu-item">
+                    <h4 class="item-name">The Carnivore (Meat Lovers)</h4>
+                    <span class="item-sizes">12" & 16"</span>
+                    <p class="item-desc">Loaded with premium sliced pepperoni, savory Italian sausage, and crispy bacon cooked in Mike's Hot Honey.</p>
+                </div>
+                <div class="text-menu-item">
+                    <h4 class="item-name">The Springfield Classic (Margherita)</h4>
+                    <span class="item-sizes">12" & 16"</span>
+                    <p class="item-desc">Light house red sauce, light Grande mozzarella, fresh mozzarella, fresh tomatoes, and fresh basil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="text-menu-item">
-                    <h4 class="item-name">The Carnivore (Meat Lovers)</h4>
-                    <span class="item-sizes">12" & 16"</span>
-                    <p class="item-desc">Loaded with premium sliced pepperoni, savory Italian sausage, and crispy bacon cooked in Mike's Hot Honey.</p>
-                </div>
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-info">
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Ready to book your event?</p>
+            <a href="mailto:customcrustkitchen@outlook.com" class="contact-link">customcrustkitchen@outlook.com</a>
+            <a href="tel:+16176552502" class="contact-link">(617) 655-2502</a>
+            <div class="social-container">
+                <a href="https://www.instagram.com/customcrustkitchen/" target="_blank" class="social-btn">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61578503514299" target="_blank" class="social-btn">Facebook</a>
+            </div>
+        </div>
+    </section>
 
-                <div class="text-menu-item">
-                    <h4 class="item-name">The Springfield Classic (Margherita)</h4>
-                    <span class="item-sizes">12" & 16"</span>
-                    <p class="item-desc">Light house red sauce, light Grande mozzarella, fresh mozzarella, fresh tomatoes, and fresh basil.</p>
-                </div>
+    <footer>
+        <p>&copy; 2026 Custom Crust Kitchen LLC. All Rights Reserved.</p>
+    </footer>
 
-                <div class="text-menu-item">
-                    <h4 class="item-name">The Buffalo Soldier (Buffalo Chicken)</h4>
-                    <span class="item-sizes">12" & 16"</span>
-                    <p class="item-desc">Diced chicken, buffalo swirl, Grande mozzarella, and a blue cheese finish.</p>
-                </div>
-
-                <div class="text-menu-item">
-                    <h4 class="item-name">The Bianco Veggie</h4>
-                    <span class="item-sizes">12" & 16"</span>
-                    <p class="item-desc">White pie featuring an olive oil and sliced garlic base, light Grande mozzarella, ricotta cheese, broccoli, and black olives. (Add a protein upon request!)</p>
-                </div>
-
-                <div class="text-menu-item">
-                    <h4 class="item-name">The Wheatless Wonder (Gluten-Friendly)</h4>
-                    <span class="item-sizes">10"</span>
-                    <p class="item-desc">Cauliflower crust. Note: Shared oven, not for severe allergies.</p>
-                </div>
-            </div>
-
-            <div class="menu-category">
-                <h3 class="menu-category-title">Calzones</h3>
-                
-                <div class="text-menu-item">
-                    <h4 class="item-name">Create Your Own Calzone</h4>
-                    <span class="item-sizes">Medium & Large</span>
-                    <p class="item-desc">Folded and baked to perfection, generously filled with creamy ricotta, premium Grande mozzarella, and your choice of custom ingredients. Served with a 4 oz side of our signature house pizza sauce for dipping.</p>
-                    <span class="catering-note">*Extra 4 oz dipping sauce available for an additional charge.</span>
-                </div>
-            </div>
-
-            <div class="menu-category">
-                <h3 class="menu-category-title">Kids Menu</h3>
-                <p style="color: var(--text-muted); margin-bottom: 20px; font-style: italic; font-size: 0.95rem;">All kids' pizzas are served on our thicker, doughier traditional crust to help little hands keep those toppings in place.</p>
-                
-                <div class="text-menu-item">
-                    <h4 class="item-name">Kids Cheese Pizza</h4>
-                    <p class="item-desc">Our classic cheese pizza featuring Grande mozzarella on a traditional thick crust.</p>
-                </div>
-
-                <div class="text-menu-item">
-                    <h4 class="item-name">Kids Pepperoni Pizza</h4>
-                    <p class="item-desc">Topped with premium sliced pepperoni on a traditional thick crust.</p>
-                </div>
-
-                <div class="text-menu-item">
-                    <h4 class="item-name">Kids Make Your Own</h4>
-                    <p class="item-desc">Served on our traditional thick crust. Let the little ones get creative with their favorite toppings!</p>
-                </div>
-            </div>
-
-            <div class="menu-category">
-                <h3 class="menu-category-title">Additional Toppings</h3>
-                <p style="color: var(--text-muted); margin-bottom: 40px; font-style: italic; font-size: 0.95rem;">Customize any pie or build your own from scratch. Additional charges apply depending on the size of the pizza.</p>
-                
-                <div class="text-menu-item">
-                    <h4 class="item-name">Standard Toppings</h4>
-                    <p class="item-desc">Onions, Green Peppers, Mushrooms, Black Olives, Broccoli, Fresh Sliced Tomatoes</p>
-                </div>
-
-                <div class="text-menu-item">
-                    <h4 class="item-name">Premium Toppings</h4>
-                    <p class="item-desc">Premium Sliced Pepperoni, Savory Italian Sausage, Hot Honey Candied Bacon, Diced Chicken, Ricotta Cheese, Fresh Mozzarella, Extra Grande Mozzarella</p>
-                </div>
-            </div>
-
-            <div class="menu-category">
-                <h3 class="menu-category-title">Catering Packages</h3>
-                <p style="color: var(--text-muted); margin-bottom: 40px; font-style: italic; font-size: 0.95rem;">Perfect for private parties, corporate events, and tailgates. Reach out to our team for a custom quote built around your event location and specific needs.</p>
-                
-                <div class="text-menu-item">
-                    <h4 class="item-name">The Classic Crowd</h4>
-                    <span class="item-sizes">Standard Pizzas (Plain Jane or Premium Pepperoni)</span>
-                    <p class="item-desc">
-                        <strong>Small Group:</strong> Feeds 10-12 (4 Large Pizzas)<br>
-                        <strong>Medium Group:</strong> Feeds 20-25 (8 Large Pizzas)<br>
-                        <strong>Large Group:</strong> Feeds 40-50 (15 Large Pizzas)
-                    </p>
-                    <span class="catering-note">*Please contact us for larger parties.</span>
-                </div>
-
-                <div class="text-menu-item">
-                    <h4 class="item-name">The Premium Experience</h4>
-                    <span class="item-sizes">Mix and Match Any Specialty Pies</span>
-                    <p class="item-desc">
-                        <strong>Small Group:</strong> Feeds 10-12 (4 Large Pizzas)<br>
-                        <strong>Medium Group:</strong> Feeds 20-25 (8 Large Pizzas)<br>
-                        <strong>Large Group:</strong> Feeds 40-50 (15 Large Pizzas)
-                    </p>
-                    <span class="catering-note">*Please contact us for larger parties.</span>
-                </div>
-
-                <div class="text-menu-item">
-                    <h4 class="item-name">The "Bambino" Kids Party</h4>
-                    <span class="item-sizes">Kid-Friendly Customizations</span>
-                    <p class="item-desc">Feeds 12-15 Kids (4 Large Pizzas). Served on our traditional thicker crust with mild sauce, extra Grande mozzarella, and "party cut" into 16 smaller slices.</p>
-                    <span class="catering-note">*Please contact us for larger parties.</span>
-                </div>
-
-                <div class="text-menu-item">
-                    <h4 class="item-name">Beverage Add-On</h4>
-                    <p class="item-desc">Assorted canned sodas and bottled water, delivered ice cold for your group.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-info">
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Ready to book your event or have a question about the menu? We'd love to hear from you.</p>
-            
-            <a href="mailto:customcrustkitchen@outlook.com?subject=Inquiry:%20Custom%20Crust%20Kitchen" class="contact-link">customcrustkitchen@outlook.com</a>
-            
-            <a href="tel:+16176552502" class="contact-link">(617) 655-2502</a>
-
-            <div class="social-container">
-                <a href="https://wa.me/16176552502" target="_blank" class="social-btn">Chat With Us</a>
-                <a href="https://www.facebook.com/profile.php?id=61578503514299" target="_blank" class="social-btn">Facebook</a>
-                <a href="https://www.instagram.com/customcrustkitchen/" target="_blank" class="social-btn">Instagram</a>
-                <a href="https://x.com/customcrustkit" target="_blank" class="social-btn">X</a>
-                <a href="https://g.page/r/CbGSCMsYjS0XEAI/review" target="_blank" class="social-btn">Google Review</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>Opening soon in a location near you.</p>
-        <p>&copy; 2026 Custom Crust Kitchen LLC. All Rights Reserved.</p>
-    </footer>
+    <script>
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=." + document.domain + "; path=/;";
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + document.domain + "; path=/;";
+    </script>
 
 </body>
 </html>
