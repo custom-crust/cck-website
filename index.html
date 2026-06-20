@@ -33,7 +33,7 @@
             line-height: 1.6;
         }
 
-        /* Header Wrapper for Announcement and Nav */
+        /* Header Wrapper for Nav */
         .header-wrapper {
             position: fixed;
             top: 0;
@@ -41,18 +41,6 @@
             z-index: 1000;
             display: flex;
             flex-direction: column;
-        }
-
-        /* Announcement Bar */
-        .announcement-bar {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            text-align: center;
-            padding: 10px 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
         }
 
         /* Navigation Bar */
@@ -124,7 +112,7 @@
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            padding-top: 180px; 
+            padding-top: 140px; 
         }
 
         .main-logo {
@@ -154,6 +142,60 @@
             color: var(--text-muted);
         }
 
+        /* Hours of Operation Section */
+        .hours-container {
+            background-color: var(--bg-secondary);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            border-radius: 8px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .hours-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .hours-list {
+            list-style: none;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
+        }
+
+        .hours-list li {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hours-list span.day {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .hours-announcement {
+            background-color: rgba(197, 160, 89, 0.1);
+            color: var(--accent-color);
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
         .cta-button {
             display: inline-block;
             background-color: transparent;
@@ -169,6 +211,7 @@
             cursor: pointer; 
             opacity: 0.8;
             transition: all 0.3s ease;
+            margin-top: 20px;
         }
 
         .cta-button:hover {
@@ -425,15 +468,13 @@
             .nav-links { display: none; }
             #home h1 { font-size: 2.5rem; }
             .text-menu-container { padding: 40px 20px; }
+            .hours-list li { flex-direction: column; gap: 5px;}
         }
     </style>
 </head>
 <body>
 
     <div class="header-wrapper">
-        <div class="announcement-bar">
-            Grand Opening June 18th! Follow our socials for more info.
-        </div>
         <nav>
             <a href="#home" class="nav-logo-link">
                 <img src="CCK_Logo.png" alt="Custom Crust Kitchen" class="nav-logo">
@@ -450,7 +491,21 @@
     <section id="home">
         <img src="CCK_Logo.png" alt="Custom Crust Kitchen Logo" class="main-logo">
         <h1>Crafted to Perfection.</h1>
-        <p>Experience the art of our authentic, Neapolitan-style thin-crust pizza. Crafted with premium dough, hand-stretched for the perfect crispy canvas, and loaded with fresh, high-end toppings. We proudly cater for private events, weddings, corporate gatherings, and festivals.</p>
+        <p>Experience the art of our authentic, Neapolitan-style thin-crust pizza. Crafted with premium dough, hand-stretched for the perfect crispy canvas, and loaded with fresh, high-end toppings.</p>
+        
+        <div class="hours-container">
+            <h2 class="hours-title">Hours of Operation</h2>
+            <ul class="hours-list">
+                <li><span class="day">Monday (6/22)</span> <span>5:00 PM - 9:30 PM</span></li>
+                <li><span class="day">Tuesday (6/23)</span> <span>11:30 AM - 3:00 PM</span></li>
+                <li><span class="day">Friday (6/26)</span> <span>12:00 PM - 9:30 PM</span></li>
+            </ul>
+            <div class="hours-announcement">
+                🎉 Beginning Tuesday, June 30th 🎉<br>
+                Open Daily: 11:30 AM - 9:00 PM
+            </div>
+        </div>
+        
         <div class="cta-button">Online Ordering Coming Soon</div>
     </section>
 
