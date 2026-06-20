@@ -43,6 +43,28 @@
             flex-direction: column;
         }
 
+        /* Announcement Bar */
+        .announcement-bar {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .announcement-bar a {
+            color: inherit;
+            text-decoration: underline;
+            transition: opacity 0.3s ease;
+        }
+        
+        .announcement-bar a:hover {
+            opacity: 0.7;
+        }
+
         /* Navigation Bar */
         nav {
             width: 100%;
@@ -72,7 +94,7 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 25px;
         }
 
         .nav-links a {
@@ -112,7 +134,7 @@
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            padding-top: 140px; 
+            padding-top: 160px; 
         }
 
         .main-logo {
@@ -142,7 +164,7 @@
             color: var(--text-muted);
         }
 
-        /* Hours of Operation Section */
+        /* Location & Hours Section */
         .hours-container {
             background-color: var(--bg-secondary);
             border: 1px solid rgba(197, 160, 89, 0.4);
@@ -158,10 +180,36 @@
             font-family: var(--font-heading);
             font-size: 2rem;
             color: var(--accent-color);
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
             padding-bottom: 15px;
             display: inline-block;
+        }
+
+        /* Clickable Map Link Styling */
+        .map-link {
+            color: var(--text-main);
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .map-link:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .location-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .disclaimer-text {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 30px;
         }
 
         .hours-list {
@@ -413,6 +461,11 @@
             gap: 15px;
         }
 
+        .contact-address {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
         .contact-link {
             font-family: var(--font-heading);
             font-size: 1.8rem;
@@ -469,21 +522,26 @@
             #home h1 { font-size: 2.5rem; }
             .text-menu-container { padding: 40px 20px; }
             .hours-list li { flex-direction: column; gap: 5px;}
+            .announcement-bar { font-size: 0.7rem; padding: 10px; }
         }
     </style>
 </head>
 <body>
 
     <div class="header-wrapper">
+        <div class="announcement-bar">
+            📍 <a href="https://maps.google.com/?q=297+Lynn+St,+Peabody,+MA+01960" target="_blank">297 Lynn St, Peabody, MA 01960</a> | If we aren't here, we're catering a private event!
+        </div>
         <nav>
             <a href="#home" class="nav-logo-link">
                 <img src="CCK_Logo.png" alt="Custom Crust Kitchen" class="nav-logo">
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#location">Find Us</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#about">Our Story</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -493,8 +551,11 @@
         <h1>Crafted to Perfection.</h1>
         <p>Experience the art of our authentic, Neapolitan-style thin-crust pizza. Crafted with premium dough, hand-stretched for the perfect crispy canvas, and loaded with fresh, high-end toppings.</p>
         
-        <div class="hours-container">
-            <h2 class="hours-title">Hours of Operation</h2>
+        <div class="hours-container" id="location">
+            <h2 class="hours-title">Location & Hours</h2>
+            <a href="https://maps.google.com/?q=297+Lynn+St,+Peabody,+MA+01960" target="_blank" class="location-text map-link">📍 297 Lynn St, Peabody, MA 01960</a>
+            <p class="disclaimer-text">*Note: As a mobile kitchen, if our trailer isn't parked here, we are out catering a private event!</p>
+            
             <ul class="hours-list">
                 <li><span class="day">Monday (6/22)</span> <span>5:00 PM - 9:30 PM</span></li>
                 <li><span class="day">Tuesday (6/23)</span> <span>11:30 AM - 3:00 PM</span></li>
@@ -655,6 +716,7 @@
     <section id="contact">
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-info">
+            <a href="https://maps.google.com/?q=297+Lynn+St,+Peabody,+MA+01960" target="_blank" class="contact-address map-link">📍 297 Lynn St, Peabody, MA 01960</a>
             <a href="mailto:customcrustkitchen@outlook.com?subject=Inquiry" class="contact-link">customcrustkitchen@outlook.com</a>
             <a href="tel:+16176552502" class="contact-link">(617) 655-2502</a>
             <div class="social-container">
