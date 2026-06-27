@@ -456,6 +456,114 @@
             margin-bottom: 20px;
         }
 
+        /* Reviews Carousel Section */
+        #reviews {
+            margin-bottom: 40px;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            min-height: 400px; /* Accounts for longer reviews */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .review-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            transform: translateY(-45%);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        .review-card.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .stars {
+            color: var(--accent-color);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+
+        .review-quote {
+            font-style: italic;
+            font-weight: 300;
+            color: var(--text-main);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .review-quote::before {
+            content: '"';
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: rgba(197, 160, 89, 0.15);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        .reviewer-name {
+            font-family: var(--font-heading);
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .review-source {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 10px;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(197, 160, 89, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--accent-color);
+        }
+
         /* Contact Section */
         #contact {
             background-color: var(--bg-secondary);
@@ -463,7 +571,7 @@
             padding: 80px 40px;
             text-align: center;
             margin-bottom: 60px;
-            margin-top: 60px;
+            margin-top: 40px;
         }
 
         .contact-info {
@@ -535,6 +643,9 @@
             .text-menu-container { padding: 40px 20px; }
             .hours-list li { flex-direction: column; gap: 5px;}
             .announcement-bar { font-size: 0.7rem; padding: 10px; }
+            .carousel-container { min-height: 550px; } /* Expand height for mobile long text */
+            .review-card { padding: 30px 15px; }
+            .review-quote { font-size: 1rem; }
         }
     </style>
 </head>
@@ -734,6 +845,61 @@
         </div>
     </section>
 
+    <!-- REVIEWS CAROUSEL SECTION -->
+    <section id="reviews">
+        <h2 class="section-title">What People Are Saying</h2>
+        <div class="carousel-container">
+            
+            <!-- Slide 1 -->
+            <div class="review-card active">
+                <div class="stars">★★★★★</div>
+                <p class="review-quote">This was the best pizza I’ve ever had—better than any other pizza place in the area. Everything was cooked perfectly and came out hot and fresh. I also tried a calzone, and it was absolutely amazing. The flavor, texture, and portion were all on point. I highly recommend this place... You will not be disappointed.</p>
+                <h4 class="reviewer-name">Tony Gonzales</h4>
+                <span class="review-source">Google Review</span>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-quote">We tried Custom Crust Kitchen for the first time and were really impressed! The pizza was fresh, flavorful, and had the perfect thin, crispy crust. You can tell they use quality ingredients, and everything tasted homemade. Our order was prepared quickly, and the service was friendly. We’ll definitely be back...</p>
+                <h4 class="reviewer-name">Megan</h4>
+                <span class="review-source">Google Review</span>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-quote">From the minute the pizza gets out the oven, you get the delicious smell, we have had their pizzas twice and they did not disappoint! Our favorite is the carnivore, honestly the best pizza I have ever had, so yummy. Very very sweet people and they make the pizzas fast! Highly highly recommend!</p>
+                <h4 class="reviewer-name">Tatyana Silva</h4>
+                <span class="review-source">Google Review</span>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-quote">I have to say that the pizza is out of this world. Best pizza I ever had. Recommend everyone to try it out you won’t be sorry 👍👍</p>
+                <h4 class="reviewer-name">Gail Espinola</h4>
+                <span class="review-source">Google Review</span>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-quote">Omg. What a magickal discovery! ... I pulled in at 9:27. They close at 9:30. The owner, Christian, was super chill and wouldn't let me walk away without whatever pizza I wanted. A Carnivore it is. Hot honey wins every time!... $22 square for the pie and a solid tip for being willing to open up his 6pans for me at 3 to close... 10/10 will go again.</p>
+                <h4 class="reviewer-name">crystal murphy</h4>
+                <span class="review-source">Google Review</span>
+            </div>
+
+            <div class="carousel-indicators">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-info">
@@ -755,9 +921,47 @@
     </footer>
 
     <script>
+        // Google Translate Cookie Fix
         document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=." + document.domain + "; path=/;";
         document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + document.domain + "; path=/;";
+
+        // Reviews Carousel Logic
+        const slides = document.querySelectorAll('.review-card');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function startSlideShow() {
+            slideInterval = setInterval(nextSlide, 6000); // Changes every 6 seconds
+        }
+
+        function resetSlideShow() {
+            clearInterval(slideInterval);
+            startSlideShow();
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+                resetSlideShow(); // Reset timer when clicked manually
+            });
+        });
+
+        startSlideShow(); // Start the carousel
     </script>
 </body>
 </html>
