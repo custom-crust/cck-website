@@ -15,7 +15,7 @@
             --text-main: #f5f5f5; 
             --text-muted: #b0b0b0;
             --accent-color: #c5a059; 
-            --wednesday-color: #e67e22; /* Color for Wednesday highlighting */
+            --wednesday-color: #e67e22; 
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Montserrat', sans-serif;
         }
@@ -34,38 +34,6 @@
             line-height: 1.6;
         }
 
-        /* Header Wrapper for Nav */
-        .header-wrapper {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Announcement Bar */
-        .announcement-bar {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            text-align: center;
-            padding: 10px 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        .announcement-bar a {
-            color: inherit;
-            text-decoration: underline;
-            transition: opacity 0.3s ease;
-        }
-        
-        .announcement-bar a:hover {
-            opacity: 0.7;
-        }
-
         /* Navigation Bar */
         nav {
             width: 100%;
@@ -75,6 +43,9 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
 
         .nav-logo-link {
@@ -113,7 +84,7 @@
 
         /* Universal Section Styling */
         section {
-            padding: 120px 20px 80px; 
+            padding: 80px 20px 80px; 
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -135,7 +106,7 @@
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            padding-top: 160px; 
+            padding-top: 80px; 
         }
 
         .main-logo {
@@ -233,7 +204,6 @@
             color: var(--accent-color);
         }
 
-        /* Wednesday Highlight */
         .hours-list .wednesday {
             color: var(--wednesday-color) !important;
         }
@@ -430,7 +400,7 @@
 
         .about-image {
             margin: 60px auto;
-            max-width: 350px; 
+            max-width: 402px; /* Increased by 15% from 350px */
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid rgba(197, 160, 89, 0.3);
@@ -649,8 +619,7 @@
             #home h1 { font-size: 2.5rem; }
             .text-menu-container { padding: 40px 20px; }
             .hours-list li { flex-direction: column; gap: 5px;}
-            .announcement-bar { font-size: 0.7rem; padding: 10px; }
-            .carousel-container { min-height: 550px; } /* Expand height for mobile long text */
+            .carousel-container { min-height: 550px; }
             .review-card { padding: 30px 15px; }
             .review-quote { font-size: 1rem; }
         }
@@ -658,23 +627,18 @@
 </head>
 <body>
 
-    <div class="header-wrapper">
-        <div class="announcement-bar">
-            📍 <a href="https://maps.google.com/?q=297+Lynn+St,+Peabody,+MA+01960" target="_blank">297 Lynn St, Peabody, MA 01960</a> | All taxes and fees included on prices!
-        </div>
-        <nav>
-            <a href="#home" class="nav-logo-link">
-                <img src="CCK_Logo.png" alt="Custom Crust Kitchen" class="nav-logo">
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#location">Find Us</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#about">Our Story</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+    <nav>
+        <a href="#home" class="nav-logo-link">
+            <img src="CCK_Logo.png" alt="Custom Crust Kitchen" class="nav-logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#location">Find Us</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <section id="home">
         <img src="CCK_Logo.png" alt="Custom Crust Kitchen Logo" class="main-logo">
