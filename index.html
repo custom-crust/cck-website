@@ -34,6 +34,34 @@
             line-height: 1.6;
         }
 
+        /* Top Announcement Banner */
+        .top-banner {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            text-align: center;
+            padding: 10px 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1001;
+            text-transform: uppercase;
+        }
+
+        .top-banner a {
+            color: var(--bg-color);
+            text-decoration: underline;
+            font-weight: 700;
+            margin-left: 10px;
+            transition: opacity 0.3s ease;
+        }
+
+        .top-banner a:hover {
+            opacity: 0.8;
+        }
+
         /* Navigation Bar */
         nav {
             width: 100%;
@@ -44,7 +72,7 @@
             align-items: center;
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
             position: fixed;
-            top: 0;
+            top: 40px; /* Pushed down to accommodate the top banner */
             z-index: 1000;
         }
 
@@ -106,7 +134,7 @@
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            padding-top: 80px; 
+            padding-top: 120px; /* Added extra padding for the top banner and nav */
         }
 
         .main-logo {
@@ -615,6 +643,8 @@
         }
 
         @media (max-width: 768px) {
+            .top-banner { font-size: 0.8rem; padding: 10px; }
+            nav { top: 38px; }
             .nav-links { display: none; }
             #home h1 { font-size: 2.5rem; }
             .text-menu-container { padding: 40px 20px; }
@@ -626,6 +656,10 @@
     </style>
 </head>
 <body>
+
+    <div class="top-banner">
+        Online ordering is now available! <a href="https://cash.app/$customcrustkitchen1" target="_blank">Order Online Here</a>
+    </div>
 
     <nav>
         <a href="#home" class="nav-logo-link">
@@ -665,7 +699,7 @@
             </ul>
         </div>
         
-        <div class="cta-button">Online Ordering Coming Soon</div>
+        <a href="https://cash.app/$customcrustkitchen1" target="_blank" class="cta-button">Order Online Now</a>
     </section>
 
     <section id="menu">
@@ -850,12 +884,10 @@
         </div>
     </section>
 
-    <!-- REVIEWS CAROUSEL SECTION -->
     <section id="reviews">
         <h2 class="section-title">What People Are Saying</h2>
         <div class="carousel-container">
             
-            <!-- Slide 1 -->
             <div class="review-card active">
                 <div class="stars">★★★★★</div>
                 <p class="review-quote">This was the best pizza I’ve ever had—better than any other pizza place in the area. Everything was cooked perfectly and came out hot and fresh. I also tried a calzone, and it was absolutely amazing. The flavor, texture, and portion were all on point. I highly recommend this place... You will not be disappointed.</p>
@@ -863,7 +895,6 @@
                 <span class="review-source">Google Review</span>
             </div>
 
-            <!-- Slide 2 -->
             <div class="review-card">
                 <div class="stars">★★★★★</div>
                 <p class="review-quote">We tried Custom Crust Kitchen for the first time and were really impressed! The pizza was fresh, flavorful, and had the perfect thin, crispy crust. You can tell they use quality ingredients, and everything tasted homemade. Our order was prepared quickly, and the service was friendly. We’ll definitely be back...</p>
@@ -871,7 +902,6 @@
                 <span class="review-source">Google Review</span>
             </div>
 
-            <!-- Slide 3 -->
             <div class="review-card">
                 <div class="stars">★★★★★</div>
                 <p class="review-quote">From the minute the pizza gets out the oven, you get the delicious smell, we have had their pizzas twice and they did not disappoint! Our favorite is the carnivore, honestly the best pizza I have ever had, so yummy. Very very sweet people and they make the pizzas fast! Highly highly recommend!</p>
@@ -879,7 +909,6 @@
                 <span class="review-source">Google Review</span>
             </div>
 
-            <!-- Slide 4 -->
             <div class="review-card">
                 <div class="stars">★★★★★</div>
                 <p class="review-quote">I have to say that the pizza is out of this world. Best pizza I ever had. Recommend everyone to try it out you won’t be sorry 👍👍</p>
@@ -887,7 +916,6 @@
                 <span class="review-source">Google Review</span>
             </div>
 
-            <!-- Slide 5 -->
             <div class="review-card">
                 <div class="stars">★★★★★</div>
                 <p class="review-quote">Omg. What a magickal discovery! ... I pulled in at 9:27. They close at 9:30. The owner, Christian, was super chill and wouldn't let me walk away without whatever pizza I wanted. A Carnivore it is. Hot honey wins every time!... $22 square for the pie and a solid tip for being willing to open up his 6pans for me at 3 to close... 10/10 will go again.</p>
