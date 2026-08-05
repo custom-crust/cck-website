@@ -244,7 +244,7 @@
             border: 1px solid rgba(197, 160, 89, 0.3);
             margin-bottom: 30px;
             text-align: left;
-            max-width: 450px;
+            max-width: 500px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -273,10 +273,12 @@
 
         .special-hours-list li {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 15px;
             border-bottom: 1px dashed rgba(197, 160, 89, 0.15);
-            padding-bottom: 5px;
+            padding-bottom: 10px;
         }
 
         .special-hours-list li:last-child {
@@ -288,6 +290,7 @@
         .special-hours-list span.date {
             font-weight: 600;
             color: var(--text-main);
+            margin-bottom: 5px;
         }
 
         .cta-button {
@@ -732,11 +735,22 @@
                 <h3 class="special-hours-title">Upcoming Special Hours</h3>
                 <p class="special-hours-note">*If we are closed during our normal business hours, it is because we are out catering a private event!</p>
                 <ul class="special-hours-list">
-                    <li><span class="date">July 25, 2026</span> <span>12:30 PM - 4:00 PM</span></li>
-                    <li><span class="date">August 1, 2026</span> <span class="wednesday">Closed</span></li>
-                    <li><span class="date">August 8, 2026</span> <span class="wednesday">Closed</span></li>
-                    <li><span class="date">August 30, 2026</span> <span class="wednesday">Closed</span></li>
-                    <li><span class="date">September 7, 2026 (Labor Day)</span> <span>3:00 PM - 9:00 PM</span></li>
+                    <li>
+                        <span class="date">August 8, 2026</span> 
+                        <span class="wednesday">Closed - Catering a graduation party</span>
+                    </li>
+                    <li>
+                        <span class="date">August 16, 2026</span> 
+                        <span class="wednesday">Closed - Mayor Bettencourt Summer Concert Series Finale in Peabody</span>
+                    </li>
+                    <li>
+                        <span class="date">August 30, 2026</span> 
+                        <span class="wednesday">Closed - Uruguayan festival in Fitchburg</span>
+                    </li>
+                    <li>
+                        <span class="date">September 7, 2026 (Labor Day)</span> 
+                        <span class="wednesday">Closed</span>
+                    </li>
                 </ul>
             </div>
             
@@ -844,7 +858,7 @@
                 <div class="text-menu-item">
                     <h4 class="item-name">Create Your Own Calzone</h4>
                     <span class="item-sizes">Medium: 16 | Large: 22</span>
-                    <p class="item-desc">Includes ricotta and Grande mozzarella. Add your choice of Standard (3) or Premium (4) toppings to build your own masterpiece. Served with 4oz signature sauce.</p>
+                    <p class="item-desc">Includes ricotta and Grande mozzarella. Add your choice of Standard (veggies) for 2 dollars or Premium (proteins) for 3 dollars per topping to build your own masterpiece. Served with 4oz signature sauce.</p>
                 </div>
             </div>
 
