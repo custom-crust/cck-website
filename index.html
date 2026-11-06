@@ -236,25 +236,35 @@
             color: var(--closed-color) !important;
         }
 
-        /* Special Hours Styling */
+        /* Flashy Winter Hours Styling */
+        @keyframes pulseBorder {
+            0% { box-shadow: 0 0 5px rgba(197, 160, 89, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(197, 160, 89, 0.8); transform: scale(1.02); }
+            100% { box-shadow: 0 0 5px rgba(197, 160, 89, 0.2); }
+        }
+
         .special-hours-container {
-            background-color: rgba(197, 160, 89, 0.05);
+            background: linear-gradient(145deg, rgba(197, 160, 89, 0.1), rgba(197, 160, 89, 0.02));
             padding: 25px;
             border-radius: 8px;
-            border: 1px solid rgba(197, 160, 89, 0.3);
+            border: 2px solid var(--accent-color);
             margin-bottom: 30px;
             text-align: left;
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
+            animation: pulseBorder 2.5s infinite ease-in-out;
         }
 
         .special-hours-title {
             font-family: var(--font-heading);
             color: var(--accent-color);
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+            font-weight: 600;
             margin-bottom: 10px;
             text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .special-hours-note {
@@ -731,7 +741,7 @@
             <p class="disclaimer-text">*Note: As a mobile kitchen, if our trailer isn't parked here, we are out catering a private event!</p>
             
             <div class="special-hours-container">
-                <h3 class="special-hours-title">❄️ Winter Hours & Special Dates</h3>
+                <h3 class="special-hours-title">❄️ New Winter Hours! ❄️</h3>
                 <p class="special-hours-note">*Always refer to Google for the most up-to-date hours and events!</p>
                 <ul class="special-hours-list">
                     <li>
@@ -742,6 +752,10 @@
                     <li>
                         <span class="date">December 31 & January 1</span> 
                         <span style="color: var(--accent-color); font-weight: 600;">Open - New Year's Eve & New Year's Day</span>
+                    </li>
+                    <li>
+                        <span class="date">January 3</span> 
+                        <span class="closed-day">Closed</span>
                     </li>
                 </ul>
             </div>
