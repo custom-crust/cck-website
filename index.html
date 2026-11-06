@@ -15,7 +15,7 @@
             --text-main: #f5f5f5; 
             --text-muted: #b0b0b0;
             --accent-color: #c5a059; 
-            --wednesday-color: #e67e22; 
+            --closed-color: #e67e22; 
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Montserrat', sans-serif;
         }
@@ -232,8 +232,8 @@
             color: var(--accent-color);
         }
 
-        .hours-list .wednesday {
-            color: var(--wednesday-color) !important;
+        .hours-list .closed-day, .special-hours-list .closed-day {
+            color: var(--closed-color) !important;
         }
 
         /* Special Hours Styling */
@@ -704,7 +704,7 @@
 <body>
 
     <div class="top-banner">
-        Online ordering is now available! <a href="https://cash.app/$customcrustkitchen1" target="_blank">Order Online Here</a>
+        Order Online Here! <a href="https://cash.app/$customcrustkitchen1" target="_blank">Click To Order</a>
     </div>
 
     <nav>
@@ -731,29 +731,26 @@
             <p class="disclaimer-text">*Note: As a mobile kitchen, if our trailer isn't parked here, we are out catering a private event!</p>
             
             <div class="special-hours-container">
-                <h3 class="special-hours-title">Upcoming Special Hours</h3>
-                <p class="special-hours-note">*If we are closed during our normal business hours, it is because we are out catering a private event!</p>
+                <h3 class="special-hours-title">❄️ Winter Hours & Special Dates</h3>
+                <p class="special-hours-note">*Always refer to Google for the most up-to-date hours and events!</p>
                 <ul class="special-hours-list">
                     <li>
-                        <span class="date">September 7 - 8, 2026 (Labor Day)</span> 
-                        <span class="wednesday">Closed</span>
+                        <span class="date">November 28, 2026</span> 
+                        <span class="closed-day">Closed - Private Event</span>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">(We have special hours this week to make up for the closure, please check Google!)</span>
                     </li>
                     <li>
-                        <span class="date">September 14, 2026</span> 
-                        <span class="wednesday">Closed - Pizza Competition (Duxbury, MA)</span>
-                    </li>
-                    <li>
-                        <span class="date">September 15, 2026</span> 
-                        <span class="wednesday">Closed - Private Catering (Danvers, MA)</span>
+                        <span class="date">December 31 & January 1</span> 
+                        <span style="color: var(--accent-color); font-weight: 600;">Open - New Year's Eve & New Year's Day</span>
                     </li>
                 </ul>
             </div>
             
             <ul class="hours-list">
-                <li><span class="day">Monday</span> <span>3:00 PM - 9:00 PM</span></li>
-                <li><span class="day">Tuesday</span> <span>3:00 PM - 9:00 PM</span></li>
-                <li><span class="day wednesday">Wednesday</span> <span class="wednesday">Closed</span></li>
-                <li><span class="day">Thursday</span> <span>3:00 PM - 9:00 PM</span></li>
+                <li><span class="day">Monday</span> <span>12:30 PM - 9:00 PM</span></li>
+                <li><span class="day closed-day">Tuesday</span> <span class="closed-day">Closed</span></li>
+                <li><span class="day closed-day">Wednesday</span> <span class="closed-day">Closed</span></li>
+                <li><span class="day">Thursday</span> <span>12:30 PM - 9:00 PM</span></li>
                 <li><span class="day">Friday</span> <span>12:30 PM - 9:00 PM</span></li>
                 <li><span class="day">Saturday</span> <span>12:30 PM - 9:00 PM</span></li>
                 <li><span class="day">Sunday</span> <span>12:30 PM - 9:00 PM</span></li>
